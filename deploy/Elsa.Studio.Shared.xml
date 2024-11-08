@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Components.ExpressionInput">
+            <summary>
+            A component that renders an input for an expression.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Components.ExpressionInput.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Components.ExpressionInput.EditorContext">
+            <summary>
+            The context for the editor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.ExpressionInput.ChildContent">
+            <summary>
+            The content to render inside the editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Components.ExpressionInput.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Components.ExpressionInput.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Components.ExpressionInput.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Components.StudioComponentBase">
+            Base class for components. This class sets the <see cref="P:Elsa.Studio.Services.BlazorServiceAccessor.Services"/> property to the <see cref="T:System.IServiceProvider"/> instance.
+            See https://learn.microsoft.com/en-us/aspnet/core/blazor/fundamentals/dependency-injection?view=aspnetcore-7.0#access-server-side-blazor-services-from-a-different-di-scope
+        </member>
+        <member name="P:Elsa.Studio.Components.StudioComponentBase.Services">
+            Gets the current IServiceProvider.
+        </member>
+        <member name="P:Elsa.Studio.Components.StudioComponentBase.BlazorServiceAccessor">
+            Gets the current <see cref="T:Elsa.Studio.Contracts.IBlazorServiceAccessor"/>.
+        </member>
+        <member name="M:Elsa.Studio.Components.StudioComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Components.StudioComponentBase.InvokeWithBlazorServiceContext(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Invokes the given function with the Blazor service context.
+            </summary>
+            <param name="func">The function to be invoked.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Components.StudioComponentBase.InvokeWithBlazorServiceContext``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Invokes the given function with the Blazor service context.
+            </summary>
+            <param name="func">The function to be invoked.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Components.Zone">
+            <summary>
+            Represents a zone in which widgets can be rendered.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.Zone.Name">
+            <summary>
+            Gets or sets the zone name.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.Zone.Attributes">
+            <summary>
+            Gets or sets the attributes that are passed to the widgets.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Components.Zone.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Components.Zone.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Components.ClientPackageVersion.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Components.DataPanel.Data">
+            <summary>
+            The data to display.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.DataPanel.HideEmptyValues">
+            <summary>
+            If true, empty values will be hidden.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.DataPanel.ShowNoDataAlert">
+            <summary>
+            If true, a message will be displayed when there is no data.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.DataPanel.NoDataMessage">
+            <summary>
+            The message to display when there is no data.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Components.NavMenu.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Components.ScrollableWell.MaxHeight">
+            <summary>
+            The maximum height of the <see cref="T:Elsa.Studio.Components.ScrollableWell"/> component.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.ScrollableWell.ChildContent">
+            <summary>
+            The content to be rendered inside the <see cref="T:Elsa.Studio.Components.ScrollableWell"/> component.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Components.ServerPackageVersion.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Components.VerticalWell.ChildContent">
+            <summary>
+            The content to be rendered inside the <see cref="T:Elsa.Studio.Components.VerticalWell"/> component.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.VerticalWell.ExtraPadding">
+            <summary>
+            The amount of extra padding to add to the bottom of the <see cref="T:Elsa.Studio.Components.VerticalWell"/> component.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Components.Well.ChildContent">
+            <summary>
+            The content to be rendered inside the <see cref="T:Elsa.Studio.Components.Well"/> component.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IMonacoHandler">
+            <summary>
+            Allows extensions to customize Monaco editor behavior, such as configuring intellisense.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMonacoHandler.InitializeAsync(Elsa.Studio.Models.MonacoContext)">
+            <summary>
+            Invoked when the Monaco editor is initialized.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Converters.JsonPrimitiveToStringConverter">
+            <summary>
+            Converts primitives to and from JSON strings.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Converters.JsonPrimitiveToStringConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Converters.JsonPrimitiveToStringConverter.Write(System.Text.Json.Utf8JsonWriter,System.String,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Converters.JsonStringToIntConverter">
+            <summary>
+            Converts strings to and from integers.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Converters.JsonStringToIntConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Converters.JsonStringToIntConverter.Write(System.Text.Json.Utf8JsonWriter,System.Int32,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Extensions.ClaimsExtensions">
+            <summary>
+            Contains extension methods for <see cref="T:System.Collections.Generic.IEnumerable`1" />.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.ClaimsExtensions.IsExpired(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            Determines whether the "exp" claim is expired.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Adds shared services to the service collection.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.ServiceCollectionExtensions.AddSharedServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds shared services to the service collection.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Layouts.MainLayout">
+            <summary>
+            The main layout for the application.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Layouts.MainLayout.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Layouts.MainLayout.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Layouts.MainLayout.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Models.MonacoContext">
+            <summary>
+            Represents a context for working with the Monaco editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.MonacoContext.#ctor(BlazorMonaco.Editor.StandaloneCodeEditor,Elsa.Studio.Models.DisplayInputEditorContext)">
+            <summary>
+            Represents a context for working with the Monaco editor.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.MonacoHandlers.JavaScriptMonacoHandler">
+            <summary>
+            Handles Monaco editor for JavaScript.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.MonacoHandlers.JavaScriptMonacoHandler.#ctor(Microsoft.JSInterop.IJSRuntime,Elsa.Studio.Services.TypeDefinitionService)">
+            <summary>
+            Handles Monaco editor for JavaScript.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.MonacoHandlers.JavaScriptMonacoHandler.InitializeAsync(Elsa.Studio.Models.MonacoContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.TypeDefinitionService">
+            <summary>
+            A service that provides TypeScript type definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.TypeDefinitionService.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider,Elsa.Studio.Contracts.IBlazorServiceAccessor,System.IServiceProvider)">
+            <summary>
+            A service that provides TypeScript type definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.TypeDefinitionService.GetTypeDefinition(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the type definition for the specified activity type.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.ToolVersion">
+            <summary>
+            Represents the version of the tool.
+            </summary>
+        </member>
+        <member name="F:Elsa.Studio.ToolVersion.Version">
+            <summary>
+            The version of the tool.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ToolVersion.GetDisplayVersion">
+            <summary>
+            Gets the display version of the tool.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

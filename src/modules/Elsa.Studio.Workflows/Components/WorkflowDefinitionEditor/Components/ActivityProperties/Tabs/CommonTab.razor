@@ -1,0 +1,80 @@
+@using Variant = MudBlazor.Variant
+@using Elsa.Api.Client.Extensions
+@inherits StudioComponentBase
+
+<div class="pa-4">
+    @if (Activity != null && ActivityDescriptor != null)
+    {
+        <MudForm ReadOnly="IsReadOnly">
+            <MudStack Spacing="5">
+                <MudField Disabled="IsReadOnly"
+                    T="string"
+                    Label="ID"
+                    HelperText="The ID of the activity."
+                    Variant="Variant.Outlined">
+                    <MudText Typo="Typo.body1">@Activity.GetId()</MudText>
+                </MudField>
+
+                <MudTextField
+                    T="string"
+                    Label="Name"
+                    HelperText="The name of the activity. Named activities can be referenced by other activities."
+                    Value="@Activity.GetName()"
+                    Variant="Variant.Outlined"
+                    ValueChanged="OnActivityNameChanged"
+                    ReadOnly="IsReadOnly"
+                    Disabled="IsReadOnly"/>
+
+                <MudTextField
+                    T="string"
+                    Label="Display text"
+                    HelperText="The text to display in the designer."
+                    Value="@Activity.GetDisplayText()"
+                    Variant="Variant.Outlined"
+                    ValueChanged="OnActivityDisplayTextChanged"
+                    ReadOnly="IsReadOnly"
+                    Disabled="IsReadOnly"/>
+
+                <MudTextField
+                    T="string"
+                    Label="Description"
+                    HelperText="A description of this activity to be displayed in the designer."
+                    Value="@Activity.GetDescription()"
+                    Variant="Variant.Outlined"
+                    Lines="3"
+                    ValueChanged="OnActivityDescriptionChanged"
+                    ReadOnly="IsReadOnly"
+                    Disabled="IsReadOnly"/>
+
+                <MudField
+                    Variant="Variant.Text"
+                    HelperText="Whether to show the description in the designer."
+                    Margin="Margin.None"
+                    DisableUnderLine="@false"
+                    Disabled="IsReadOnly">
+                    <MudCheckBox
+                        T="bool?"
+                        Label="Show description"
+                        Dense="@true"
+                        Checked="@(Activity.GetShowDescription() == true)"
+                        CheckedChanged="OnShowDescriptionChanged"/>
+                </MudField>
+                
+                <MudField
+                    Variant="Variant.Text"
+                    DisableUnderLine="@false"
+                    Margin="Margin.None"
+                    HelperText="@(IsTrigger ? "When checked, this activity can trigger this workflow." : "When checked, this activity is the start of this workflow.")"
+                    Disabled="IsReadOnly">
+                    <MudCheckBox
+                        T="bool?"
+                        Label="@(IsTrigger ? "Trigger workflow" : "Start of workflow")"
+                        Dense="@true"
+                        Checked="@(Activity.GetCanStartWorkflow() == true)"
+                        CheckedChanged="OnCanStartWorkflowChanged"/>
+                </MudField>
+
+            </MudStack>
+        </MudForm>
+    }
+</div>

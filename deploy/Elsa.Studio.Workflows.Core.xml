@@ -1,0 +1,1129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Workflows.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext">
+            <summary>
+            Represents the context for a port provider.
+            </summary>
+            <param name="ActivityDescriptor">The descriptor of te activity for which ports are being provided.</param> 
+            <param name="Activity">The activity for which ports are being provided.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext.#ctor(Elsa.Api.Client.Resources.ActivityDescriptors.Models.ActivityDescriptor,System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Represents the context for a port provider.
+            </summary>
+            <param name="ActivityDescriptor">The descriptor of te activity for which ports are being provided.</param> 
+            <param name="Activity">The activity for which ports are being provided.</param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext.ActivityDescriptor">
+            <summary>The descriptor of te activity for which ports are being provided.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext.Activity">
+            <summary>The activity for which ports are being provided.</summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityExecutionService">
+            <summary>
+            A service that provides information about the execution of activities.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityExecutionService.GetReportAsync(System.String,System.Text.Json.Nodes.JsonObject,System.Threading.CancellationToken)">
+            <summary>
+            Gets a report of the execution of activities.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityExecutionService.ListAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a list of activity execution records.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IIdentityGenerator">
+            <summary>
+            Generates unique activity IDs.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IIdentityGenerator.GenerateId">
+            <summary>
+            Generates a unique activity ID.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityNameGenerator">
+            <summary>
+            Generates unique activity names.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityNameGenerator.GetNameExists(System.Collections.Generic.IEnumerable{System.Text.Json.Nodes.JsonObject},System.String)">
+            <summary>
+            Returns true if the specified name already exists in the container.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityNameGenerator.GenerateNextName(System.Collections.Generic.IEnumerable{System.Text.Json.Nodes.JsonObject},Elsa.Api.Client.Resources.ActivityDescriptors.Models.ActivityDescriptor)">
+            <summary>
+            Generates a unique name for the specified activity descriptor.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider">
+            <summary>
+            Provides ports for activities.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider.Priority">
+            <summary>
+            Gets the priority of the provider.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <summary>
+            Returns true if the provider supports the specified activity type.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <summary>
+            Returns the ports for the specified activity.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider.ResolvePort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <summary>
+            Returns the activity for the specified port.
+            </summary>
+            <param name="portName">The name of the port.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider.AssignPort(System.String,System.Text.Json.Nodes.JsonObject,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <summary>
+            Assigns the specified activity to the specified port.
+            </summary>
+            <param name="portName">The name of the port.</param>
+            <param name="activity">The activity to assign.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider.ClearPort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <summary>
+            Clears the specified port.
+            </summary>
+            <param name="portName">The name of the port.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry">
+            <summary>
+            Represents a registry of activity descriptors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry.RefreshAsync(System.Threading.CancellationToken)">
+            <summary>
+            Refreshes the list of activity descriptors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry.EnsureLoadedAsync(System.Threading.CancellationToken)">
+            <summary>
+            Ensures that the list of activity descriptors is loaded.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry.List">
+            <summary>
+            Returns a list of the latest versions of activity descriptors.
+            </summary>
+            <returns>A list of activity descriptors.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry.Find(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Finds an activity descriptor by its type.
+            </summary>
+            <param name="activityType">The activity type.</param>
+            <param name="version">The activity version.</param>
+            <returns>The activity descriptor.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistryProvider">
+            <summary>
+            Provides a list of activity descriptors to the activity registry. This is a way to abstract the source of activity descriptors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistryProvider.ListAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of activity descriptors.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityResolver">
+            <summary>
+            An activity resolver inspects a given activity and returns its contained activities.
+            Node resolvers are used to inspect a workflow structure and build a graph of nodes from it for easy node traversal.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Contracts.IActivityResolver.Priority">
+            <summary>
+            The priority of this resolver. Resolvers with higher priority are executed first.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityResolver.GetSupportsActivity(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Returns true if this resolver supports the specified activity.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityResolver.GetActivitiesAsync(System.Text.Json.Nodes.JsonObject,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of contained activities for the specified activity.
+            </summary>
+            <param name="activity"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityVisitor">
+            <summary>
+            Represents a visitor that can visit an activity.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IActivityVisitor.VisitAsync(System.Text.Json.Nodes.JsonObject,System.Threading.CancellationToken)">
+            <summary>
+            Visits the specified activity and returns a graph of activities.
+            </summary>
+            <param name="activity"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IIncidentStrategiesProvider">
+            <summary>
+            Provides incident strategies.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IIncidentStrategiesProvider.GetIncidentStrategiesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets incident strategies.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IStorageDriverService">
+            <summary>
+            A services that provides storage drivers.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IStorageDriverService.GetStorageDriversAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the storage drivers.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IVariableTypeService">
+            <summary>
+            A services that provides variable types.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IVariableTypeService.GetVariableTypesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the variable types.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowActivationStrategyService">
+            <summary>
+            A services that provides workflow activation strategies.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowActivationStrategyService.GetWorkflowActivationStrategiesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the workflow activation strategies.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService">
+            <summary>
+            A service that can be used to manage workflow definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.ListAsync(Elsa.Api.Client.Resources.WorkflowDefinitions.Requests.ListWorkflowDefinitionsRequest,System.Nullable{Elsa.Api.Client.Shared.Models.VersionOptions},System.Threading.CancellationToken)">
+            <summary>
+            Lists all workflow definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.FindByDefinitionIdAsync(System.String,System.Nullable{Elsa.Api.Client.Shared.Models.VersionOptions},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Finds a workflow definition by its ID.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.FindByIdAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Finds a workflow definition by its ID.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.FindManyByIdAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Finds all workflow definitions by their IDs.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.SaveAsync(Elsa.Api.Client.Resources.WorkflowDefinitions.Requests.SaveWorkflowDefinitionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Saves a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.DeleteAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.DeleteVersionAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a workflow definition version.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.PublishAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Publishes a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.RetractAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Retracts a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.BulkDeleteAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Deletes multiple workflow definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.BulkDeleteVersionsAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Deletes multiple workflow definition versions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.BulkPublishAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Publishes multiple workflow definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.BulkRetractAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Retracts multiple workflow definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.GetIsNameUniqueAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns true if a workflow definition with the specified name exists.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.GenerateUniqueNameAsync(System.Threading.CancellationToken)">
+            <summary>
+            Generates a unique name for a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.CreateNewDefinitionAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.ExportDefinitionAsync(System.String,System.Nullable{Elsa.Api.Client.Shared.Models.VersionOptions},System.Threading.CancellationToken)">
+            <summary>
+            Exports a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.ImportDefinitionAsync(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinitionModel,System.Threading.CancellationToken)">
+            <summary>
+            Imports a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.BulkExportDefinitionsAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Exports a set of workflow definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.UpdateReferencesAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Updates the references of a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.RevertVersionAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Reverts the specified workflow definition to the specified version.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.ExecuteAsync(System.String,Elsa.Api.Client.Resources.WorkflowDefinitions.Requests.ExecuteWorkflowDefinitionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Executes a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService.ImportFilesAsync(System.Collections.Generic.IEnumerable{Refit.StreamPart},System.Threading.CancellationToken)">
+            <summary>
+            Imports a set of files containing workflow definitions.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Extensions.ActivityNodeExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Elsa.Api.Client.Shared.Models.ActivityNode"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Extensions.ActivityNodeExtensions.Flatten(Elsa.Api.Client.Shared.Models.ActivityNode)">
+            <summary>
+            Returns a flattened list of the specified node and all its descendants.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Extensions.ActivityRegistryExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Extensions.ActivityRegistryExtensions.ListBrowsable(Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry)">
+            <summary>
+            Returns a list of activity descriptors that are browsable.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Extensions.ProblemDetailsExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Refit.ProblemDetails"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Extensions.ProblemDetailsExtensions.ToValidationErrors(Refit.ProblemDetails)">
+            <summary>
+            Converts a <see cref="T:Refit.ProblemDetails"/> object to a <see cref="T:Elsa.Studio.Workflows.Domain.Models.ValidationErrors"/> object.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Extensions.ValidationApiExceptionExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Refit.ValidationApiException"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Extensions.ValidationApiExceptionExtensions.GetValidationErrors(Refit.ValidationApiException)">
+            <summary>
+            Gets the validation errors from a <see cref="T:Refit.ValidationApiException"/>.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Models.EmbeddedActivity">
+            <summary>
+            Represents an embedded activity.
+            </summary>
+            <param name="Activity">The embedded activity.</param>
+            <param name="PropertyName">The name of the property that contains the embedded activity.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.EmbeddedActivity.#ctor(System.Text.Json.Nodes.JsonObject,System.String)">
+            <summary>
+            Represents an embedded activity.
+            </summary>
+            <param name="Activity">The embedded activity.</param>
+            <param name="PropertyName">The name of the property that contains the embedded activity.</param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Models.EmbeddedActivity.Activity">
+            <summary>The embedded activity.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Models.EmbeddedActivity.PropertyName">
+            <summary>The name of the property that contains the embedded activity.</summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Models.ExpressionDescriptorProvider">
+            <summary>
+            Provides expression descriptors that can be used as a cascading parameter.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.ExpressionDescriptorProvider.ListDescriptors">
+            <summary>
+            Lists all expression descriptors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.ExpressionDescriptorProvider.Add(Elsa.Api.Client.Resources.Scripting.Models.ExpressionDescriptor)">
+            <summary>
+            Adds an expression descriptor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.ExpressionDescriptorProvider.GetByType(System.String)">
+            <summary>
+            Gets an expression descriptor by type.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.ExpressionDescriptorProvider.AddRange(System.Collections.Generic.IEnumerable{Elsa.Api.Client.Resources.Scripting.Models.ExpressionDescriptor})">
+            <summary>
+            Adds a range of expression descriptors.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Models.FileDownload">
+            <summary>
+            Represents a file download.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.FileDownload.#ctor(System.String,System.IO.Stream)">
+            <summary>
+            Represents a file download.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Models.ValidationError">
+            <summary>
+            Represents a validation error.
+            </summary>
+            <param name="ErrorMessage"></param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.ValidationError.#ctor(System.String)">
+            <summary>
+            Represents a validation error.
+            </summary>
+            <param name="ErrorMessage"></param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Models.ValidationError.ErrorMessage">
+            <summary></summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.ValidationError.ToString">
+            <summary>
+            Returns the error message.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Models.ValidationErrors">
+            <summary>
+            Represents a collection of validation errors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Models.ValidationErrors.#ctor(System.Collections.Generic.IReadOnlyCollection{Elsa.Studio.Workflows.Domain.Models.ValidationError})">
+            <summary>
+            Represents a collection of validation errors.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Notifications.ActivityRegistryRefreshed">
+            <summary>
+            Represents a notification that is published when the activity registry is refreshed.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Notifications.WorkflowDefinitionPublished">
+            <summary>
+            Represents a notification that is sent when a workflow definition is published.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Notifications.WorkflowDefinitionPublished.#ctor(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition)">
+            <summary>
+            Represents a notification that is sent when a workflow definition is published.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Providers.ActivityPortProviderBase">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Providers.ActivityPortProviderBase.Priority">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Providers.ActivityPortProviderBase.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Providers.ActivityPortProviderBase.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Providers.ActivityPortProviderBase.ResolvePort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Providers.ActivityPortProviderBase.AssignPort(System.String,System.Text.Json.Nodes.JsonObject,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Providers.ActivityPortProviderBase.ClearPort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Providers.DefaultActivityPortProvider">
+            <summary>
+            A default implementation of <see cref="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider"/> that returns the ports defined by the activity descriptor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Domain.Providers.DefaultActivityPortProvider.Priority">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Providers.DefaultActivityPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Providers.DefaultActivityPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityDisplaySettingsRegistry">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityDisplaySettingsRegistry.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Workflows.UI.Contracts.IActivityDisplaySettingsProvider})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityDisplaySettingsRegistry"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityDisplaySettingsRegistry.GetSettings(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityNameGenerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityNameGenerator.GetNameExists(System.Collections.Generic.IEnumerable{System.Text.Json.Nodes.JsonObject},System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityNameGenerator.GenerateNextName(System.Collections.Generic.IEnumerable{System.Text.Json.Nodes.JsonObject},Elsa.Api.Client.Resources.ActivityDescriptors.Models.ActivityDescriptor)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityPortService">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityPortService.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityPortService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityPortService.GetProvider(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityPortService.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityRegistry">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityRegistry.#ctor(Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistryProvider,Elsa.Studio.Contracts.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityRegistry"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityRegistry.RefreshAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityRegistry.EnsureLoadedAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityRegistry.List">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityRegistry.Find(System.String,System.Nullable{System.Int32})">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityVisitor">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityVisitor.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Workflows.Domain.Contracts.IActivityResolver})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.DefaultActivityVisitor"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.DefaultActivityVisitor.VisitAsync(System.Text.Json.Nodes.JsonObject,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RandomLongIdentityGenerator">
+            <summary>
+            Generates a unique identifier using a random long value.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RandomLongIdentityGenerator.GenerateId">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteActivityExecutionService">
+            <summary>
+            An activity execution service that uses a remote backend to retrieve activity execution reports.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteActivityExecutionService.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteActivityRegistryProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteActivityExecutionService.GetReportAsync(System.String,System.Text.Json.Nodes.JsonObject,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteActivityExecutionService.ListAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteActivityRegistryProvider">
+            <summary>
+            An activity registry provider that uses a remote backend to retrieve activity descriptors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteActivityRegistryProvider.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteActivityRegistryProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteActivityRegistryProvider.ListAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteIncidentStrategiesProvider">
+            <summary>
+            Provides incident strategies from a remote server.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteIncidentStrategiesProvider.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteIncidentStrategiesProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteIncidentStrategiesProvider.GetIncidentStrategiesAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteServerInformationProvider">
+            <summary>
+            Provides information about a remote server.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteServerInformationProvider.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteServerInformationProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteServerInformationProvider.GetInfoAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteStorageDriverService">
+            <summary>
+            A storage driver service that uses a remote backend to retrieve storage drivers.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteStorageDriverService.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteStorageDriverService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteStorageDriverService.GetStorageDriversAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteVariableTypeService">
+            <summary>
+            A variable type service that uses a remote backend to retrieve variable types.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteVariableTypeService.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteVariableTypeService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteVariableTypeService.GetVariableTypesAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowActivationStrategyService">
+            <summary>
+            A workflow activation strategy service that uses a remote backend to retrieve workflow activation strategies.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowActivationStrategyService.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowActivationStrategyService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowActivationStrategyService.GetWorkflowActivationStrategiesAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService">
+            <summary>
+            A workflow definition service that uses a remote backend to retrieve workflow definitions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider,Elsa.Studio.Workflows.Domain.Contracts.IIdentityGenerator,Elsa.Studio.Contracts.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.ListAsync(Elsa.Api.Client.Resources.WorkflowDefinitions.Requests.ListWorkflowDefinitionsRequest,System.Nullable{Elsa.Api.Client.Shared.Models.VersionOptions},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.FindByDefinitionIdAsync(System.String,System.Nullable{Elsa.Api.Client.Shared.Models.VersionOptions},System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.FindByIdAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.FindManyByIdAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.SaveAsync(Elsa.Api.Client.Resources.WorkflowDefinitions.Requests.SaveWorkflowDefinitionRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.PublishAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.RetractAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.DeleteAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.DeleteVersionAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.BulkDeleteAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.BulkDeleteVersionsAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.BulkPublishAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.BulkRetractAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.GetIsNameUniqueAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.GenerateUniqueNameAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.CreateNewDefinitionAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.ExportDefinitionAsync(System.String,System.Nullable{Elsa.Api.Client.Shared.Models.VersionOptions},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.ImportDefinitionAsync(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinitionModel,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.BulkExportDefinitionsAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.UpdateReferencesAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.RevertVersionAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.ExecuteAsync(System.String,Elsa.Api.Client.Resources.WorkflowDefinitions.Requests.ExecuteWorkflowDefinitionRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowDefinitionService.ImportFilesAsync(System.Collections.Generic.IEnumerable{Refit.StreamPart},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService">
+            <summary>
+            A workflow instance service that uses a remote backend to retrieve workflow instances.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.ListAsync(Elsa.Api.Client.Resources.WorkflowInstances.Requests.ListWorkflowInstancesRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.DeleteAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.BulkDeleteAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.CancelAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.BulkCancelAsync(Elsa.Api.Client.Resources.WorkflowInstances.Requests.BulkCancelWorkflowInstancesRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.GetAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.GetJournalAsync(System.String,Elsa.Api.Client.Resources.WorkflowInstances.Requests.JournalFilter,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.ExportAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.BulkExportAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.RemoteWorkflowInstanceService.BulkImportAsync(System.Collections.Generic.IEnumerable{Refit.StreamPart},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Domain.Services.ShortGuidIdentityGenerator">
+            <summary>
+            Generates unique activity IDs using <see cref="T:DEDrake.ShortGuid"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Domain.Services.ShortGuidIdentityGenerator.GenerateId">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Extensions.ActivityExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Text.Json.Nodes.JsonObject"/> representing an activity
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ActivityExtensions.GetFlowchart(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Gets the flowchart from the specified activity.
+            </summary>
+            <param name="activity"></param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Extensions.ActivityVisitorExtensions">
+            <summary>
+            A set of extensions for <see cref="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityVisitor"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ActivityVisitorExtensions.VisitAndMapAsync(Elsa.Studio.Workflows.Domain.Contracts.IActivityVisitor,Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition)">
+            <summary>
+            A method that uses the visitor and returns a lookup dictionary by activity ID.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ActivityVisitorExtensions.VisitAsync(Elsa.Studio.Workflows.Domain.Contracts.IActivityVisitor,Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition)">
+            <summary>
+            A method that uses the visitor and returns a lookup dictionary by activity ID.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ActivityVisitorExtensions.VisitAndMapAsync(Elsa.Studio.Workflows.Domain.Contracts.IActivityVisitor,System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            A method that uses the visitor and returns a lookup dictionary by activity ID.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ActivityVisitorExtensions.ToActivity(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition)">
+            <summary>
+            Creates an activity from the specified workflow definition.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ServiceCollectionExtensions.AddWorkflowsCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the workflows module.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ServiceCollectionExtensions.AddDiagramDesignerProvider``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds a <see cref="T:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesignerProvider"/> to the service collection.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ServiceCollectionExtensions.AddActivityDisplaySettingsProvider``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds a <see cref="T:Elsa.Studio.Workflows.UI.Contracts.IActivityDisplaySettingsProvider"/> to the service collection.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ServiceCollectionExtensions.AddActivityPortProvider``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds a <see cref="T:Elsa.Studio.Workflows.Domain.Contracts.IActivityPortProvider"/> to the service collection.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Resolvers.DefaultActivityResolver">
+            <summary>
+            A default resolver.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Resolvers.DefaultActivityResolver.Priority">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Resolvers.DefaultActivityResolver.GetSupportsActivity(System.Text.Json.Nodes.JsonObject)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Resolvers.DefaultActivityResolver.GetActivitiesAsync(System.Text.Json.Nodes.JsonObject,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Args.ActivityEmbeddedPortSelectedArgs">
+            <summary>
+            Represents the arguments for the <c>ActivityEmbeddedPortSelected</c> event.
+            </summary>
+            <param name="Activity">The activity that contains the port.</param>
+            <param name="PortName">The name of the port.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Args.ActivityEmbeddedPortSelectedArgs.#ctor(System.Text.Json.Nodes.JsonObject,System.String)">
+            <summary>
+            Represents the arguments for the <c>ActivityEmbeddedPortSelected</c> event.
+            </summary>
+            <param name="Activity">The activity that contains the port.</param>
+            <param name="PortName">The name of the port.</param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Args.ActivityEmbeddedPortSelectedArgs.Activity">
+            <summary>The activity that contains the port.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Args.ActivityEmbeddedPortSelectedArgs.PortName">
+            <summary>The name of the port.</summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contexts.DisplayContext">
+            <summary>
+            Represents a context for displaying an activity.
+            </summary>
+            <param name="Activity">The activity to display.</param>
+            <param name="ActivitySelectedCallback">A callback that is invoked when an activity is selected.</param>
+            <param name="ActivityEmbeddedPortSelectedCallback">A callback that is invoked when an embedded port is selected.</param>
+            <param name="GraphUpdatedCallback">A callback that is invoked when the graph is updated.</param>
+            <param name="IsReadOnly">Whether the activity is read-only.</param>
+            <param name="ActivityStats">A map of activity stats.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contexts.DisplayContext.#ctor(System.Text.Json.Nodes.JsonObject,System.Func{System.Text.Json.Nodes.JsonObject,System.Threading.Tasks.Task},System.Func{Elsa.Studio.Workflows.UI.Args.ActivityEmbeddedPortSelectedArgs,System.Threading.Tasks.Task},System.Func{System.Text.Json.Nodes.JsonObject,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},System.Boolean,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <summary>
+            Represents a context for displaying an activity.
+            </summary>
+            <param name="Activity">The activity to display.</param>
+            <param name="ActivitySelectedCallback">A callback that is invoked when an activity is selected.</param>
+            <param name="ActivityEmbeddedPortSelectedCallback">A callback that is invoked when an embedded port is selected.</param>
+            <param name="GraphUpdatedCallback">A callback that is invoked when the graph is updated.</param>
+            <param name="IsReadOnly">Whether the activity is read-only.</param>
+            <param name="ActivityStats">A map of activity stats.</param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contexts.DisplayContext.Activity">
+            <summary>The activity to display.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contexts.DisplayContext.ActivitySelectedCallback">
+            <summary>A callback that is invoked when an activity is selected.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contexts.DisplayContext.ActivityEmbeddedPortSelectedCallback">
+            <summary>A callback that is invoked when an embedded port is selected.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contexts.DisplayContext.GraphUpdatedCallback">
+            <summary>A callback that is invoked when the graph is updated.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contexts.DisplayContext.IsReadOnly">
+            <summary>Whether the activity is read-only.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contexts.DisplayContext.ActivityStats">
+            <summary>A map of activity stats.</summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contracts.IActivityDisplaySettingsProvider">
+            <summary>
+            Provides mappings between activity types and icons.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IActivityDisplaySettingsProvider.GetSettings">
+            <summary>
+            Returns a dictionary of activity type to display settings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contracts.IActivityDisplaySettingsRegistry">
+            <summary>
+            Provides mappings between activity types and icons.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesigner">
+            <summary>
+            Represents a diagram editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesigner.LoadRootActivityAsync(System.Text.Json.Nodes.JsonObject,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <summary>
+            Loads the specified root activity int the designer.
+            </summary>
+            <param name="activity">The root activity to load.</param>
+            <param name="activityStatsMap">A map of activity stats.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesigner.UpdateActivityAsync(System.String,System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Updates the specified activity in the diagram. This is used to update the diagram when an activity is updated in the activity editor.
+            </summary>
+            <param name="id">The ID of the activity to update.</param>
+            <param name="activity">The activity to update.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesigner.UpdateActivityStatsAsync(System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats)">
+            <summary>
+            Updates the stats of the specified activity.
+            </summary>
+            <param name="id">The ID of the activity to update.</param>
+            <param name="stats">The stats to update.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesigner.SelectActivityAsync(System.String)">
+            <summary>
+            Selects the specified activity in the diagram.
+            </summary>
+            <param name="id">The ID of the activity to select.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesigner.ReadRootActivityAsync">
+            <summary>
+            Reads the root activity from the diagram.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesigner.DisplayDesigner(Elsa.Studio.Workflows.UI.Contexts.DisplayContext)">
+            <summary>
+            Display the designer.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesignerProvider">
+            <summary>
+            Implement this interface to provide a diagram editor for a given workflow definition's root activity.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesignerService">
+            <summary>
+            A service for managing diagram editors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesignerService.GetDiagramDesigner(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Gets the diagram designer for the specified activity.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contracts.IDiagramDesignerToolboxProvider">
+            <summary>
+            Implement this interface to provide toolbox items for the diagram editor.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Contracts.IWorkspace">
+            <summary>
+            Represents a workspace.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contracts.IWorkspace.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the workspace is read-only.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Contracts.IWorkspace.HasWorkflowEditPermission">
+            <summary>
+            Geta a value indicating whether the user has permissions to edit the workflow.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Models.ActivityDisplaySettings">
+            <summary>
+            Represents display settings for an activity.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Models.ActivityDisplaySettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.UI.Models.ActivityDisplaySettings"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Models.ActivityDisplaySettings.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.UI.Models.ActivityDisplaySettings"/> class.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Models.ActivityDisplaySettings.Icon">
+            <summary>
+            Gets or sets the icon.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Models.ActivityDisplaySettings.Color">
+            <summary>
+            Gets or sets the color.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Models.ActivityStats">
+            <summary>
+            Represents a report of activity executions.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Models.ActivityStats.Started">
+            <summary>
+            The number of times the activity has been started.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Models.ActivityStats.Completed">
+            <summary>
+            The number of times the activity has been completed.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Models.ActivityStats.Uncompleted">
+            <summary>
+            The number of times the activity has been uncompleted.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Models.ActivityStats.Blocked">
+            <summary>
+            Whether the activity is blocked.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.UI.Models.ActivityStats.Faulted">
+            <summary>
+            Whether the activity has faulted.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Models.DefaultActivityColors">
+            <summary>
+            A static class with default activity colors.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Providers.DefaultActivityDisplaySettingsProvider">
+            <summary>
+            Provides default activity display settings.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Providers.DefaultActivityDisplaySettingsProvider.GetSettings">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.UI.Services.DefaultDiagramDesignerService">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Services.DefaultDiagramDesignerService.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Workflows.UI.Contracts.IDiagramDesignerProvider})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.UI.Services.DefaultDiagramDesignerService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.UI.Services.DefaultDiagramDesignerService.GetDiagramDesigner(System.Text.Json.Nodes.JsonObject)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

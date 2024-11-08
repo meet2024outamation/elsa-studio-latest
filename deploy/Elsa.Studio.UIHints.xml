@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.UIHints</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.UIHints.Components.Cases">
+            <summary>
+            Renders an editor for a collection of <see cref="T:Elsa.Api.Client.Shared.Models.SwitchCase"/> objects.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.Cases.EditorContext">
+            <summary>
+            The context for the editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.Cases.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.SwitchCaseRecord">
+            <summary>
+            Represents a single case in a <see cref="T:System.Diagnostics.Switch"/> activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.SwitchCaseRecord.Label">
+            <summary>
+            The label of the case.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.SwitchCaseRecord.Condition">
+            <summary>
+            The condition of the case.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.SwitchCaseRecord.ExpressionType">
+            <summary>
+            The expression type of the case.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.SwitchCaseRecord.Activity">
+            <summary>
+            When used in a <see cref="T:System.Diagnostics.Switch"/> activity, specifies the activity to schedule when the condition evaluates to true.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.CheckList">
+            <summary>
+            A component that renders a check list.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.CheckList.EditorContext">
+            <summary>
+            The editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.CheckList.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.Code">
+            <summary>
+            A component that renders a code editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.Code.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.Code.EditorContext">
+            <summary>
+            The context for the editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.Code.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.Dropdown">
+            <summary>
+            A component that renders a dropdown.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.Dropdown.EditorContext">
+            <summary>
+            The editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.Dropdown.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.DynamicOutcomes">
+            <summary>
+            Implements a component for the "dynamic-outcomes" UI hint.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.DynamicOutcomes.EditorContext">
+            <summary>
+            Gets or sets the editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.DynamicOutcomes.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.Json">
+            <summary>
+            A component that renders a code editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.Json.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.Json.EditorContext">
+            <summary>
+            The context for the editor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.Json.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.MultiText">
+            <summary>
+            Implements a component for the "multi-text" UI hint.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.MultiText.EditorContext">
+            <summary>
+            Gets or sets the editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.MultiText.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.OutcomePicker">
+            <summary>
+            A component that renders a dropdown for outcomes.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.OutcomePicker.EditorContext">
+            <summary>
+            The editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.OutcomePicker.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.OutputPicker">
+            <summary>
+            A component that renders a dropdown for outputs.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.OutputPicker.EditorContext">
+            <summary>
+            The editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.OutputPicker.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.VariablePicker">
+            <summary>
+            Provides a component for picking a variable.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.VariablePicker.EditorContext">
+            <summary>
+            Gets or sets the editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.VariablePicker.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Components.WorkflowDefinitionPicker">
+            <summary>
+            Provides a component for picking a workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.WorkflowDefinitionPicker.EditorContext">
+            <summary>
+            Gets or sets the editor context.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.WorkflowDefinitionPicker.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.Checkbox.EditorContext">
+            <summary>
+            The editor context.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Components.SingleLine.EditorContext">
+            Gets or sets the editor context.
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Components.SingleLine.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Extensions.InputDescriptorCheckListExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Extensions.InputDescriptorCheckListExtensions.GetCheckList(Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor)">
+            <summary>
+            Gets a list of <see cref="T:Elsa.Api.Client.Shared.UIHints.CheckList.CheckListItem"/>s for the specified <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Extensions.InputDescriptorCodeEditorExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Extensions.InputDescriptorCodeEditorExtensions.GetCodeEditorOptions(Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor)">
+            <summary>
+            Gets the <see cref="T:Elsa.Api.Client.Shared.UIHints.CodeEditor.CodeEditorOptions"/> for the specified <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Extensions.InputDescriptorSelectListExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Extensions.InputDescriptorSelectListExtensions.GetSelectList(Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor)">
+            <summary>
+            Gets the <see cref="T:Elsa.Api.Client.Shared.UIHints.DropDown.SelectList"/> for the specified <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Extensions.InputDescriptorSingleLineExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Extensions.InputDescriptorSingleLineExtensions.GetSingleLineProps(Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor)">
+            <summary>
+            Gets the <see cref="T:Elsa.Api.Client.Shared.UIHints.SingleLine.SingleLineProps"/> for the specified <see cref="T:Elsa.Api.Client.Resources.ActivityDescriptors.Models.InputDescriptor"/>.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Provides a set of extension methods for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Extensions.ServiceCollectionExtensions.AddDefaultUIHintHandlers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the default UI hint handlers.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Extensions.StringExtensions">
+            <summary>
+            Provides a set of extension methods for <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Extensions.StringExtensions.TrimWhitespace(System.String)">
+            <summary>
+            Trims the whitespace from the string, including null characters and new lines.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Extensions.StringExtensions.TrimNull(System.String)">
+            <summary>
+            Trims the null characters from the string.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Handlers.DropDownHandler">
+            <summary>
+            Represents a class that handles UI hints for dropdown inputs.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.DropDownHandler.GetSupportsUIHint(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Handlers.DropDownHandler.UISyntax">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.DropDownHandler.DisplayInputEditor(Elsa.Studio.Models.DisplayInputEditorContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Handlers.DynamicOutcomesHandler">
+            <summary>
+            Provides a component for the "dynamic-outcomes" UI hint.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.DynamicOutcomesHandler.GetSupportsUIHint(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Handlers.DynamicOutcomesHandler.UISyntax">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.DynamicOutcomesHandler.DisplayInputEditor(Elsa.Studio.Models.DisplayInputEditorContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Handlers.VariablePickerHandler">
+            <summary>
+            Provides a handler for the <c>variable-picker</c> UI hint.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.VariablePickerHandler.GetSupportsUIHint(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Handlers.VariablePickerHandler.UISyntax">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.VariablePickerHandler.DisplayInputEditor(Elsa.Studio.Models.DisplayInputEditorContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.UIHints.Handlers.WorkflowDefinitionPickerHandler">
+            <summary>
+            Provides a handler for the <c>workflow-definition-picker</c> UI hint.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.WorkflowDefinitionPickerHandler.GetSupportsUIHint(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.UIHints.Handlers.WorkflowDefinitionPickerHandler.UISyntax">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Handlers.WorkflowDefinitionPickerHandler.DisplayInputEditor(Elsa.Studio.Models.DisplayInputEditorContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.UIHints.Helpers.JsonParser.ParseJson``1(System.String,System.Func{``0},System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Parses the specified JSON string into an object of type <typeparamref name="T"/>.
+            </summary>
+            <param name="json">The JSON string to parse.</param>
+            <param name="defaultValueFactory">A factory function that returns a default value of type <typeparamref name="T"/>.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use when parsing the JSON string.</param>
+            <typeparam name="T">The type of the object to parse the JSON string into.</typeparam>
+            <returns>An object of type <typeparamref name="T"/>.</returns>
+        </member>
+    </members>
+</doc>

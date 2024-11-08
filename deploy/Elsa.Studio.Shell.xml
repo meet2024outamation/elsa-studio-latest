@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Shell</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Shell.ComponentProviders.DefaultUnauthorizedComponentProvider">
+            <summary>
+            Provides a <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> that displays nothing. This is useful for scenarios where the login page is not required. If you need to display a login page, use <c>LoginPageProvider"</c> from the Login module instead or implement your own <see cref="T:Elsa.Studio.Contracts.IUnauthorizedComponentProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Shell.ComponentProviders.DefaultUnauthorizedComponentProvider.GetUnauthorizedComponent">
+            <summary>
+            Returns a <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> that displays nothing.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Shell.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Shell.Extensions.ServiceCollectionExtensions.AddShell(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Elsa.Studio.Shell.Options.ShellOptions})">
+            <summary>
+            Adds the shell services.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Shell.Options.ShellOptions">
+            <summary>
+            Contains options for the <see cref="T:Elsa.Studio.Shell.App"/> component.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Shell.Options.ShellOptions.DisableAuthorization">
+            <summary>
+            Gets or sets a value indicating whether authorization is disable. <c>false</c> by default.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Shell.App.OnInitialized">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,34 @@
+@using MudBlazor
+<div class="d-flex flex-grow-1 gap-4 align-content-start relative">
+    <div class="flex-1">
+
+        <MudField Variant="Variant.Outlined" Label="@DisplayName" HelperText="@Description" Margin="Margin.Dense" Class="@(ShowMonacoEditor ? "d-block" : "d-none")" Disabled="EditorContext.IsReadOnly">
+            <StandaloneCodeEditor
+                @ref="_monacoEditor"
+                Id="@_monacoEditorId"
+                ConstructionOptions="ConfigureMonacoEditor"
+                CssClass="studio-expression-input-monaco-editor"
+                OnDidInit="OnMonacoInitializedAsync"
+                OnDidChangeModelContent="OnMonacoContentChangedAsync"/>
+        </MudField>
+
+        @if (!ShowMonacoEditor)
+        {
+            @ChildContent
+        }
+        
+    </div>
+    @if (EditorContext.InputDescriptor.IsWrapped)
+    {
+        <div class="flex-none pt-1">
+            <MudMenu Label="@ButtonLabel" Icon="@ButtonIcon" Variant="@ButtonVariant" Color="@ButtonColor" EndIcon="@ButtonEndIcon" IconColor="@ButtonEndColor" Dense="true" Disabled="EditorContext.IsReadOnly">
+                @foreach (var item in BrowseableExpressionDescriptors)
+                {
+                    var isChecked = item.Type == _selectedExpressionType;
+                    var iconColor = isChecked ? Color.Secondary : Color.Transparent;
+                    <MudMenuItem Class="studio-expression-input-menu-item" OnClick="@(() => OnSyntaxSelectedAsync(item.Type))" Icon="@Icons.Material.Filled.Check" IconSize="Size.Small" IconColor="iconColor">@item.DisplayName</MudMenuItem>
+                }
+            </MudMenu>
+        </div>
+    }
+</div>

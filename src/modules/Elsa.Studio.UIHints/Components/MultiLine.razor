@@ -1,0 +1,40 @@
+@using Elsa.Studio.Models
+@using Elsa.Api.Client.Resources.Scripting.Models
+@using Elsa.Studio.UIHints.Extensions
+
+@{
+    var inputDescriptor = EditorContext.InputDescriptor;
+    var displayName = inputDescriptor.DisplayName;
+    var description = inputDescriptor.Description;
+    var inputValue = EditorContext.GetLiteralValueOrDefault();
+}
+
+<ExpressionInput EditorContext="@EditorContext">
+    <ChildContent>
+        <MudTextField
+            T="string"
+            Lines="5"
+            Label="@displayName"
+            Variant="Variant.Outlined"
+            HelperText="@description"
+            Margin="Margin.Dense"
+            Value="@inputValue"
+            ValueChanged="OnValueChanged"
+            ReadOnly="EditorContext.IsReadOnly"
+            Disabled="EditorContext.IsReadOnly"/>
+    </ChildContent>
+</ExpressionInput>
+
+@code {
+
+    [Parameter]
+    public DisplayInputEditorContext EditorContext { get; set; } = default!;
+
+    private async Task OnValueChanged(string newValue)
+    {
+        var expression = Expression.CreateLiteral(newValue.TrimNull());
+        
+        await EditorContext.UpdateExpressionAsync(expression);
+    }
+
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Core.BlazorServer</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Core.BlazorServer.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Core.BlazorServer.Extensions.ServiceCollectionExtensions.AddCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds core services with Blazor Server implementations.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Core.BlazorServer.HostedServices.RunStartupTasksHostedService">
+            <summary>
+            Executes all registered <see cref="T:Elsa.Studio.Contracts.IStartupTask"/> services.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Core.BlazorServer.HostedServices.RunStartupTasksHostedService.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)">
+            <summary>
+            Initializes a new instance of <see cref="T:Elsa.Studio.Core.BlazorServer.HostedServices.RunStartupTasksHostedService"/>.
+            </summary>
+            <param name="serviceScopeFactory"></param>
+        </member>
+        <member name="M:Elsa.Studio.Core.BlazorServer.HostedServices.RunStartupTasksHostedService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Resolves all registered <see cref="T:Elsa.Studio.Contracts.IStartupTask"/> services and executes them.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Core.BlazorServer.HostedServices.RunStartupTasksHostedService.StopAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

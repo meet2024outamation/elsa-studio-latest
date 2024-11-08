@@ -1,0 +1,20 @@
+@using Variant = MudBlazor.Variant
+@using Elsa.Api.Client.Extensions
+<MudForm>
+    <MudStack Spacing="5">
+        <MudField
+            Variant="@Variant.Text"
+            HelperText="When checked, the workflow will be executed asynchronously."
+            Margin="Margin.None"
+            DisableUnderLine="@false">
+            <MudCheckBox
+                T="bool?"
+                Label="Run Asynchronously"
+                Dense="@true"
+                Checked="@(Activity?.GetRunAsynchronously() == true)"
+                CheckedChanged="OnRunAsynchronouslyChanged"
+                ReadOnly="IsReadOnly" Disabled="IsReadOnly"
+                />
+        </MudField>
+    </MudStack>
+</MudForm>

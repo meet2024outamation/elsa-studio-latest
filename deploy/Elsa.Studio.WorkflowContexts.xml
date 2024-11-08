@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.WorkflowContexts</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.WorkflowContexts.Components.WorkflowContextsEditor">
+            <summary>
+            A component that renders the workflow context editor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.WorkflowContexts.Components.WorkflowContextsEditor.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.WorkflowContexts.Components.WorkflowContextsEditor.OnWorkflowDefinitionUpdated">
+            <summary>
+            Gets or sets the callback that is invoked when the workflow definition is updated.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Components.WorkflowContextsEditor.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Components.WorkflowContextsEditor.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.WorkflowContexts.Contracts.IWorkflowContextsProvider">
+            <summary>
+            Provides workflow contexts.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Contracts.IWorkflowContextsProvider.ListAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of workflow context provider descriptors.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.WorkflowContexts.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Extensions.ServiceCollectionExtensions.AddWorkflowContextsModule(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the workflow vcontexts module to the service collection.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.WorkflowContexts.Feature">
+            <summary>
+            Registers the workflow contexts feature.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Feature.#ctor(Elsa.Studio.Contracts.IWidgetRegistry)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Feature.InitializeAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.WorkflowContexts.Services.RemoteWorkflowContextsProvider">
+            <summary>
+            Provides workflow contexts from a remote API.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Services.RemoteWorkflowContextsProvider.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.WorkflowContexts.Services.RemoteWorkflowContextsProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.WorkflowContexts.Services.RemoteWorkflowContextsProvider.ListAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.WorkflowContexts.Widgets.WorkflowContextsEditorWidget">
+            <summary>
+            A widget that renders the workflow context editor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.WorkflowContexts.Widgets.WorkflowContextsEditorWidget.Zone">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.WorkflowContexts.Widgets.WorkflowContextsEditorWidget.Order">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.WorkflowContexts.Widgets.WorkflowContextsEditorWidget.Render">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Extensions.WorkflowDefinitionExtensions">
+            <summary>
+            Adds extension methods to <see cref="T:Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Extensions.WorkflowDefinitionExtensions.GetWorkflowContextProviderTypes(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition)">
+            <summary>
+            Gets the workflow context provider types that are installed on the workflow definition.
+            </summary>
+            <param name="workflowDefinition">The workflow definition to get the provider types from.</param>
+            <returns>The workflow context provider types.</returns>
+        </member>
+        <member name="M:Elsa.Extensions.WorkflowDefinitionExtensions.SetWorkflowContextProviderTypes(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the workflow context provider types that are installed on the workflow definition.
+            </summary>
+            <param name="workflowDefinition">The workflow definition to get the provider types from.</param>
+            <param name="value">The workflow context provider types.</param>
+            <returns>The workflow context provider types.</returns>
+        </member>
+    </members>
+</doc>

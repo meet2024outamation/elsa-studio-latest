@@ -1,0 +1,68 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider IsDarkMode="@IsDarkMode" Theme="CurrentTheme"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar Elevation="0" Color="Color.Surface">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Default" Edge="Edge.Start" OnClick="@DrawerToggle" />
+        <MudSpacer/>
+        @foreach (var appBarItem in AppBarService.AppBarItems)
+        {
+            @appBarItem
+        }
+
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="0" ClipMode="DrawerClipMode.Always">
+        <MudDrawerHeader>
+            <MudStack>
+                <div class="d-flex gap-2 align-center">
+                    <MudImage Src="_content/Elsa.Studio.Shell/img/icon.png" ObjectFit="ObjectFit.ScaleDown" Fluid="true" Width="150" Height="60"></MudImage>
+                </div>
+            </MudStack>
+        </MudDrawerHeader>
+        <div class="mt-10">
+            <NavMenu/>
+        </div>
+    </MudDrawer>
+    <MudMainContent>
+        <ErrorBoundary @ref="@_errorBoundary">
+            <ChildContent>
+                @Body
+            </ChildContent>
+            
+            <ErrorContent>
+                @if (context is UnauthorizedAccessException)
+                {
+                    @UnauthorizedComponent
+                }
+                else
+                {
+                    <Well>
+                        <MudAlert Severity="Severity.Error" Variant="Variant.Filled">
+                            @context.GetType().Name: @context.Message
+                        </MudAlert>
+                    </Well>
+                }
+            </ErrorContent>
+        </ErrorBoundary>
+
+    </MudMainContent>
+    <br />
+    <br />
+    <br />
+  
+        <MudPaper Style="bottom:0; width:100%; background-color:dodgerblue; color: white;"
+                  Class="fixed d-flex flex-column justify-center align-center py-2" Elevation="0">
+            <MudElement HtmlTag="p" Style="font-weight:bold;">Powered by Outamation.</MudElement>
+            <MudElement HtmlTag="div">
+                <MudElement Class="cursor-pointer" Style="text-decoration: underline; color: white;" HtmlTag="a" href="https://outamation.com" target="blank" rel="noopener noreferrer">
+                    About Our Company
+                </MudElement> |
+                <MudElement Class="cursor-pointer" Style="text-decoration: underline; color: white;" HtmlTag="a" href="https://outamation.com/contact" target="blank" rel="noopener noreferrer">
+                    Contact Us
+                </MudElement>
+            </MudElement>
+        </MudPaper>
+</MudLayout>

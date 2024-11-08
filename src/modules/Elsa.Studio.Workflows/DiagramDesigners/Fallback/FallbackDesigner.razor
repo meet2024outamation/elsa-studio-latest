@@ -1,0 +1,17 @@
+@using System.Text.Json.Nodes
+@using Elsa.Api.Client.Extensions
+<MudPaper Width="100%" Class="pa-16">
+    <MudContainer MaxWidth="MaxWidth.ExtraSmall">
+        @if (Activity != null)
+        {
+            <ActivityWrapper Activity="@Activity" ActivityId="@Activity.GetId()"></ActivityWrapper>
+        }
+    </MudContainer>
+</MudPaper>
+
+@code {
+
+    [Parameter]
+    public JsonObject? Activity { get; set; }
+
+}

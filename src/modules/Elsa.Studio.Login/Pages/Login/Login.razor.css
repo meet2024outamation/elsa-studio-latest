@@ -1,0 +1,11 @@
+h2.LoginTitle {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Grandstander', cursive;
+    font-size: 60px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+.body{
+    background-color:white;
+}

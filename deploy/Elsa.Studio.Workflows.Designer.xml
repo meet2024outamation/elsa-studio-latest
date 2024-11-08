@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Workflows.Designer</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper">
+            <summary>
+            A wrapper for an activity component.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper.ElementId">
+            <summary>
+            Gets or sets the element ID.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper.ActivityId">
+            <summary>
+            Gets or sets the activity ID.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper.Activity">
+            <summary>
+            Gets or sets the activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper.ActivityJson">
+            <summary>
+            Until the max depth of JSInterop is configurable to exceed 32, we need to pass the activity JSON as a string.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper.SelectedPortName">
+            <summary>
+            Gets or sets the selected port name.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper.Stats">
+            <summary>
+            Gets or sets the activity stats.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.ActivityWrapper.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner">
+            <summary>
+            A Blazor component that renders a flowchart designer.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.Flowchart">
+            <summary>
+            The flowchart to render.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.ActivityStats">
+            <summary>
+            The activity stats to render.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.IsReadOnly">
+            <summary>
+            Whether the flowchart is read-only.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.ActivitySelected">
+            <summary>
+            An event raised when an activity is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.ActivityEmbeddedPortSelected">
+            <summary>
+            An event raised when an activity embedded port is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.ActivityDoubleClick">
+            <summary>
+            An event raised when an activity is double clicked.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.CanvasSelected">
+            <summary>
+            An event raised when the canvas is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.GraphUpdated">
+            <summary>
+            An event raised when the graph is updated.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.HandleActivitySelected(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Invoked from JavaScript when an activity is selected.
+            </summary>
+            <param name="activity">The selected activity.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.HandleActivityEmbeddedPortSelected(System.Text.Json.Nodes.JsonObject,System.String)">
+            <summary>
+            Invoked from JavaScript when an activity embedded port is selected.
+            </summary>
+            <param name="activity">The selected activity.</param>
+            <param name="portName">The selected port name.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.HandleActivityDoubleClick(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Invoked from JavaScript when an activity is double clicked.
+            </summary>
+            <param name="activity">The clicked activity.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.HandleCanvasSelected">
+            <summary>
+            Invoked from JavaScript when the canvas is selected.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.HandleGraphUpdated">
+            <summary>
+            Invoked from JavaScript when the graph is updated.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.HandlePasteCellsRequested(Elsa.Studio.Workflows.Designer.Models.X6ActivityNode[],Elsa.Studio.Workflows.Designer.Models.X6Edge[])">
+            <summary>
+            Invoked from JavaScript when the graph is updated.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.ReadFlowchartAsync">
+            <summary>
+            Reads the flowchart from the graph.
+            </summary>
+            <returns>The flowchart.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.LoadFlowchartAsync(System.Text.Json.Nodes.JsonObject,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <summary>
+            Loads the flowchart into the graph.
+            </summary>
+            <param name="activity">The flowchart to load.</param>
+            <param name="activityStats">The activity stats to load.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.AddActivityAsync(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Adds an activity to the graph.
+            </summary>
+            <param name="activity">The activity to add.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.SelectActivityAsync(System.String)">
+            <summary>
+            Selects the specified activity in the graph.
+            </summary>
+            <param name="id">The ID of the activity to select.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.ZoomToFitAsync">
+            <summary>
+            Zoom the canvas to fit all activities.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.CenterContentAsync">
+            <summary>
+            Center the canvas content.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.AutoLayoutAsync(System.Text.Json.Nodes.JsonObject,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <summary>
+            Update the Graph Layout.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.UpdateActivityAsync(System.String,System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Update the specified activity on the graph.
+            </summary>
+            <param name="id">The activity ID.</param>
+            <param name="activity">The updated activity.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.UpdateActivityStatsAsync(System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats)">
+            <summary>
+            Update the specified activity stats on the graph.
+            </summary>
+            <param name="activityId">The activity ID.</param>
+            <param name="stats">The updated activity stats.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner.ProcessEmbeddedPorts(System.Text.Json.Nodes.JsonObject,Elsa.Api.Client.Resources.ActivityDescriptors.Models.ActivityDescriptor)">
+            <summary>
+            Processes each embedded port's activity and generates new IDs for the contained flowchart.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Designer.Contracts.IActivityMapper">
+            <summary>
+            Maps an Activity to an X6Node.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Contracts.IActivityMapper.MapActivity(System.Text.Json.Nodes.JsonObject,Elsa.Studio.Workflows.UI.Models.ActivityStats)">
+            <summary>
+            Maps an activity to an X6Node.
+            </summary>
+            <param name="activity">The activity.</param>
+            <param name="activityStats">Activity stats.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Contracts.IActivityMapper.GetOutPorts(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Gets the outbound ports for an activity.
+            </summary>
+            <param name="activity">The activity.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Contracts.IActivityMapper.GetInPorts(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Gets the inbound ports for an activity.
+            </summary>
+            <param name="activity">The activity.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Contracts.IActivityMapper.GetPorts(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Gets the inbound and outbound ports for an activity.
+            </summary>
+            <param name="activity">The activity.</param>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Designer.Contracts.IFlowchartMapper">
+            <summary>
+            Maps a Flowchart activity from and to an X6Graph.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Contracts.IFlowchartMapper.Map(System.Text.Json.Nodes.JsonObject,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <summary>
+            Maps a flowchart activity to an X6Graph.
+            </summary>
+            <param name="flowchart">The flowchart activity.</param>
+            <param name="activityStatsMap">A map of activity stats.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Contracts.IFlowchartMapper.Map(Elsa.Studio.Workflows.Designer.Models.X6Graph)">
+            <summary>
+            Maps an X6 graph to a flowchart activity.
+            </summary>
+            <param name="graph">The X6 graph.</param>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Designer.Extensions.ComponentConfigurationExtensions">
+            <summary>
+            Contains extension methods for <see cref="T:Microsoft.AspNetCore.Components.Web.IJSComponentConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Extensions.ComponentConfigurationExtensions.RegisterCustomElsaStudioElements(Microsoft.AspNetCore.Components.Web.IJSComponentConfiguration)">
+            <summary>
+            Registers custom elements.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Designer.Interop.DesignerJsInterop">
+            <summary>
+            Provides access to the designer JavaScript module.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.DesignerJsInterop.CreateGraphAsync(System.String,Microsoft.JSInterop.DotNetObjectReference{Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner},System.Boolean)">
+            <summary>
+            Creates a new X6 graph object and returns its ID.
+            </summary>
+            <param name="containerId">The ID of the container element.</param>
+            <param name="componentRef">A reference to the <see cref="T:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner"/> component.</param>
+            <param name="isReadOnly">Whether the graph is read-only.</param>
+            <returns>The ID of the graph.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Designer.Interop.JsInteropBase">
+            <summary>
+            Provides access to the designer JavaScript module.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi">
+            <summary>
+            Provides a wrapper around the X6 graph API.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.#ctor(Microsoft.JSInterop.IJSObjectReference,System.IServiceProvider,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi"/> class.
+            </summary>
+            <param name="module">The JavaScript module reference.</param>
+            <param name="serviceProvider">The service provider.</param>
+            <param name="containerId">The ID of the container element.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.ReadGraphAsync">
+            <summary>
+            Reads the flowchart from the graph.
+            </summary>
+            <returns>The flowchart.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.DisposeGraphAsync">
+            <summary>
+            Disposes the graph.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.SetGridColorAsync(System.String)">
+            <summary>
+            Sets the grid color.
+            </summary>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.AddActivityNodeAsync(Elsa.Studio.Workflows.Designer.Models.X6ActivityNode)">
+            <summary>
+            Adds a node to the graph.
+            </summary>
+            <param name="node">The node.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.SelectActivityAsync(System.String)">
+            <summary>
+            Selects the specified activity in the graph.
+            </summary>
+            <param name="id">The ID of the activity to select.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.PasteCellsAsync(System.Collections.Generic.IEnumerable{Elsa.Studio.Workflows.Designer.Models.X6ActivityNode},Elsa.Studio.Workflows.Designer.Models.X6Edge[])">
+            <summary>
+            Adds the specified activity nodes and edges to the graph.
+            </summary>
+            <param name="activityNodes">The activity nodes.</param>
+            <param name="edges">The edges.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.LoadGraphAsync(Elsa.Studio.Workflows.Designer.Models.X6Graph)">
+            <summary>
+            Loads the specified model into the graph.
+            </summary>
+            <param name="graph">The model.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.ZoomToFitAsync">
+            <summary>
+            Zoom the canvas to fit the content.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.CenterContentAsync">
+            <summary>
+            Center the canvas content.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.AutoLayoutAsync(Elsa.Studio.Workflows.Designer.Models.X6Graph)">
+            <summary>
+            Adjusts the graph layout.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Designer.Interop.X6GraphApi.UpdateActivityAsync(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Updates the node with the specified activity. 
+            </summary>
+            <param name="activity">The activity.</param>
+        </member>
+    </members>
+</doc>

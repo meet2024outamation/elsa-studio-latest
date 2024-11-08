@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Login.BlazorServer</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Login.BlazorServer.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.BlazorServer.Extensions.ServiceCollectionExtensions.AddLoginModule(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds login services with Blazor Server implementations.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Login.BlazorServer.Services.BlazorServerJwtAccessor">
+            <summary>
+            Implements the <see cref="T:Elsa.Studio.Login.Contracts.IJwtAccessor"/> interface for server-side Blazor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.BlazorServer.Services.BlazorServerJwtAccessor.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,Blazored.LocalStorage.ILocalStorageService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Login.BlazorServer.Services.BlazorServerJwtAccessor"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.BlazorServer.Services.BlazorServerJwtAccessor.ReadTokenAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Login.BlazorServer.Services.BlazorServerJwtAccessor.WriteTokenAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Login.BlazorServer.Services.BlazorServerJwtParser">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Login.BlazorServer.Services.BlazorServerJwtParser.Parse(System.String)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

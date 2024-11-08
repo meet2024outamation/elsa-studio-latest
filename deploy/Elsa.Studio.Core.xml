@@ -1,0 +1,902 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Abstractions.FeatureBase">
+            <summary>
+            A base class for modules.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Abstractions.FeatureBase.InitializeAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Attributes.RemoteFeatureAttribute">
+            <summary>
+            Marks a class as a remote feature.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Attributes.RemoteFeatureAttribute.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Attributes.RemoteFeatureAttribute.Name">
+            <summary>
+            Gets the name of the remote feature.
+            </summary>
+        </member>
+        <member name="E:Elsa.Studio.Contracts.IAppBarService.AppBarItemsChanged">
+            <summary>
+            Invoked when the app bar items change.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IAppBarService.AppBarItems">
+            <summary>
+            A collection of components to render in the app bar.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IAppBarService.AddAppBarItem``1">
+            <summary>
+            Adds a component to the app bar.
+            </summary>
+            <typeparam name="T">The type of the component.</typeparam>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IBlazorServiceAccessor">
+            <summary>
+            Represents an interface for accessing the current IServiceProvider in Blazor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IBlazorServiceAccessor.Services">
+            Gets or sets the current IServiceProvider.
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IClientInformationProvider">
+            <summary>
+            Provides information about the client.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IClientInformationProvider.GetInfoAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets information about the client.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IExpressionProvider">
+            <summary>
+            Provides available expression descriptors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IExpressionProvider.ListAsync(System.Threading.CancellationToken)">
+            <summary>
+            Lists all expression descriptors.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IExpressionService">
+            <summary>
+            Provides syntax services.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IExpressionService.ListDescriptorsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Lists all expression descriptors.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IExpressionService.GetByTypeAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets a syntax provider by name.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IFeature">
+            <summary>
+            Represents a feature that can be registered with the dashboard.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IFeature.InitializeAsync(System.Threading.CancellationToken)">
+            <summary>
+            Called by the dashboard to initialize the feature.
+            </summary>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IFeatureService">
+            <summary>
+            Manages features.
+            </summary>
+        </member>
+        <member name="E:Elsa.Studio.Contracts.IFeatureService.Initialized">
+            <summary>
+            Event that is triggered when the features have been initialized.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IFeatureService.GetFeatures">
+            <summary>
+            Returns all features.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IFeatureService.InitializeFeaturesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Initializes all features.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IMediator">
+            <summary>
+            Represents a mediator that can be used to publish notifications and subscribe to notifications.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMediator.Subscribe``2(``1)">
+            <summary>
+            Subscribes to a notification.
+            </summary>
+            <param name="handler"></param>
+            <typeparam name="TNotification"></typeparam>
+            <typeparam name="THandler"></typeparam>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMediator.Unsubscribe``2(``1)">
+            <summary>
+            Unsubscribes from a notification.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMediator.Unsubscribe(Elsa.Studio.Contracts.INotificationHandler)">
+            <summary>
+            Unsubscribes from a notification.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMediator.NotifyAsync``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            Publishes a notification.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IMenuGroupProvider">
+            <summary>
+            Returns menu item groups to the dashboard.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMenuGroupProvider.GetMenuGroupsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns menu item groups to the dashboard.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>A collection of <see cref="T:Elsa.Studio.Models.MenuItemGroup"/> instances.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IMenuProvider">
+            <summary>
+            Provides menu items to the dashboard.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IMenuService">
+            <summary>
+            A service that provides menu items and menu item groups.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMenuService.GetMenuItemsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns all menu items from all menu providers.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>A list of <see cref="T:Elsa.Studio.Models.MenuItem"/> instances.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IMenuService.GetMenuItemGroupsAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns all menu item groups from all menu group providers.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>A list of <see cref="T:Elsa.Studio.Models.MenuItemGroup"/> instances.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.INotificationHandler">
+            <summary>
+            Represents a notification handler.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.INotificationHandler`1">
+            <summary>
+            Represents a notification handler.
+            </summary>
+            <typeparam name="T">The type of the notification.</typeparam>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.INotificationHandler`1.HandleAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Handles the given notification.
+            </summary>
+            <param name="notification">The notification to handle.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IRemoteBackendAccessor">
+            <summary>
+            Provides access to the current remote backend.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IRemoteBackendAccessor.RemoteBackend">
+            <summary>
+            Gets or sets the current backend.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IRemoteBackendApiClientProvider">
+            <summary>
+            Provides connection details to the backend.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IRemoteBackendApiClientProvider.Url">
+            <summary>
+            Gets the URL to the backend.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IRemoteBackendApiClientProvider.GetApiAsync``1(System.Threading.CancellationToken)">
+            <summary>
+            Gets an API client from the backend connection provider.
+            </summary>
+            <typeparam name="T">The API client type.</typeparam>
+            <returns>The API client.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IRemoteFeatureProvider">
+            <summary>
+            Provides a way to check if a feature is enabled.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IRemoteFeatureProvider.IsEnabledAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns a value indicating whether the feature with the specified name is enabled.
+            </summary>
+            <param name="featureName">The name of the feature.</param>
+            <param name="cancellationToken">An optional cancellation token.</param>
+            <returns>A value indicating whether the feature with the specified name is enabled.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IRemoteFeatureProvider.ListAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of installed features.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IServerInformationProvider">
+            <summary>
+            Provides information about the server.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IServerInformationProvider.GetInfoAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets information about the server.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IStartupTask">
+            <summary>
+            Represents a startup task that is invoked once during application startup.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IStartupTask.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            Invoked during application startup.
+            </summary>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IStartupTaskRunner">
+            <summary>
+            Runs startup tasks.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IStartupTaskRunner.RunStartupTasksAsync(System.Threading.CancellationToken)">
+            <summary>
+            Runs startup tasks.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IThemeService">
+            <summary>
+            Provides theme information to the dashboard.
+            </summary>
+        </member>
+        <member name="E:Elsa.Studio.Contracts.IThemeService.CurrentThemeChanged">
+            <summary>
+            Raised when the current theme changes.
+            </summary>
+        </member>
+        <member name="E:Elsa.Studio.Contracts.IThemeService.IsDarkModeChanged">
+            <summary>
+            Raised when the dark mode changes.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IThemeService.CurrentTheme">
+            <summary>
+            The current theme.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IThemeService.CurrentPalette">
+            <summary>
+            Returns the current palette, depending on whether the dashboard is in dark mode.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IThemeService.IsDarkMode">
+            <summary>
+            Whether the dashboard is in dark mode.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IUIHintHandler">
+            <summary>
+            Provides a contract for UI hint handlers.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IUIHintHandler.GetSupportsUIHint(System.String)">
+            <summary>
+            Returns true if the handler supports the specified UI hint.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IUIHintHandler.UISyntax">
+            <summary>
+            Returns the UI syntax for the handler.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IUIHintHandler.DisplayInputEditor(Elsa.Studio.Models.DisplayInputEditorContext)">
+            <summary>
+            Returns a <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> that renders the input editor.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IUnauthorizedComponentProvider">
+            <summary>
+            Provides the <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> to display the login page.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IUnauthorizedComponentProvider.GetUnauthorizedComponent">
+            <summary>
+            Returns the <see cref="T:Microsoft.AspNetCore.Components.RenderFragment"/> to display the login page.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IWidget">
+            <summary>
+            Represents a widget.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IWidget.Zone">
+            <summary>
+            Gets the zone in which the widget should be rendered.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IWidget.Order">
+            <summary>
+            Gets the order in which the widget should be rendered.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Contracts.IWidget.Render">
+            <summary>
+            Gets the fragment to render.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Contracts.IWidgetRegistry">
+            <summary>
+            Provides a registry of widgets.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IWidgetRegistry.Add(Elsa.Studio.Contracts.IWidget)">
+            <summary>
+            Adds the specified widget to the registry.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Contracts.IWidgetRegistry.List(System.String)">
+            <summary>
+            Returns a list of widgets for the specified zone.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.ElsaStudioIcons">
+            <summary>
+            Provides Elsa Studio icons.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.ElsaStudioIcons.Tabler">
+            <summary>
+            Provides Tabler icons.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.ElsaStudioIcons.Heroicons">
+            <summary>
+            Provides Heroicons.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Extensions.ObjectExtension">
+            <summary>
+            Provides extension methods for the <see cref="T:System.Object"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.ObjectExtension.ToDictionary(System.Object)">
+            <summary>
+            Converts the specified object to a dictionary.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Elsa.Studio.Extensions.RateLimitedFuncExtensions">
+            <summary>
+            Adds extension methods for <see cref="T:ThrottleDebounce.RateLimitedFunc`1"/> and <see cref="T:ThrottleDebounce.RateLimitedFunc`2"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.RateLimitedFuncExtensions.InvokeAsync(ThrottleDebounce.RateLimitedFunc{System.Threading.Tasks.Task})">
+            <summary>
+            Invokes the specified rate limited function.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.RateLimitedFuncExtensions.InvokeAsync``1(ThrottleDebounce.RateLimitedFunc{``0,System.Threading.Tasks.Task},``0)">
+            <summary>
+            Invokes the specified rate limited function.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Extensions.RenderTreeBuilderExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.RenderTreeBuilderExtensions.CreateComponent``1(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)">
+            <summary>
+            Creates a component of the specified type.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.RenderTreeBuilderExtensions.CreateComponent``1(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder,System.Int32@)">
+            <summary>
+            Creates a component of the specified type.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.ServiceCollectionExtensions.AddCoreInternal(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the core services.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.ServiceCollectionExtensions.AddRemoteBackend(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Elsa.Api.Client.Options.ElsaClientBuilderOptions},System.Action{Elsa.Studio.Options.BackendOptions})">
+            <summary>
+            Adds backend services to the service collection.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.ServiceCollectionExtensions.AddNotificationHandler``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the specified <see cref="T:Elsa.Studio.Contracts.INotificationHandler"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Extensions.ServiceCollectionExtensions.AddUIHintHandler``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the specified <see cref="T:Elsa.Studio.Contracts.IUIHintHandler"/>.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Models.ClientInformation">
+            <summary>
+            Contains information about the client.
+            </summary>
+            <param name="PackageVersion">The installed package version of Elsa Studio.</param>
+        </member>
+        <member name="M:Elsa.Studio.Models.ClientInformation.#ctor(System.String)">
+            <summary>
+            Contains information about the client.
+            </summary>
+            <param name="PackageVersion">The installed package version of Elsa Studio.</param>
+        </member>
+        <member name="P:Elsa.Studio.Models.ClientInformation.PackageVersion">
+            <summary>The installed package version of Elsa Studio.</summary>
+        </member>
+        <member name="T:Elsa.Studio.Models.DisplayInputEditorContext">
+            <summary>
+            Provides contextual information to the input editor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.WorkflowDefinition">
+            <summary>
+            The workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.Activity">
+            <summary>
+            The activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.ActivityDescriptor">
+            <summary>
+            The activity descriptor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.InputDescriptor">
+            <summary>
+            The input descriptor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.Value">
+            <summary>
+            The input value.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.UIHintHandler">
+            <summary>
+            The UI hint handler.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.SelectedExpressionDescriptor">
+            <summary>
+            The syntax provider.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.OnValueChanged">
+            <summary>
+            A delegate that is invoked when the input value changes.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.DisplayInputEditorContext.IsReadOnly">
+            <summary>
+            A value indicating whether the input is read-only.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.DisplayInputEditorContext.GetValueOrDefault``1">
+            <summary>
+            Returns the input value or the default value if the input value is null.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.DisplayInputEditorContext.GetLiteralValueOrDefault">
+            <summary>
+            Returns the wrapped input literal value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Elsa.Studio.Models.DisplayInputEditorContext.GetObjectValueOrDefault">
+            <summary>
+            Returns the wrapped input object value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Elsa.Studio.Models.DisplayInputEditorContext.GetExpressionValueOrDefault">
+            <summary>
+            Returns the input expression value if this is a wrapped input (i.e. Input{T}) or naked value otherwise. If either value is null, the default value is returned.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.DisplayInputEditorContext.UpdateValueAsync(System.Object)">
+            <summary>
+            Updates the naked input value.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.DisplayInputEditorContext.UpdateExpressionAsync(Elsa.Api.Client.Resources.Scripting.Models.Expression)">
+            <summary>
+            Updates the wrapped input expression.
+            </summary>
+            <param name="expression"></param>
+        </member>
+        <member name="T:Elsa.Studio.Models.MenuItem">
+            <summary>
+            A menu item.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.MenuItem.Icon">
+            <summary>
+            The icon to use in SVG format.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.MenuItem.Href">
+            <summary>
+            The path to navigate to.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.MenuItem.Match">
+            <summary>
+            The <see cref="T:Microsoft.AspNetCore.Components.Routing.NavLinkMatch"/> to use.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.MenuItem.Text">
+            <summary>
+            The text to display.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.MenuItem.Order">
+            <summary>
+            The order of the menu item.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.MenuItem.SubMenuItems">
+            <summary>
+            A list of sub menu items.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.MenuItem.GroupName">
+            <summary>
+            The name of the group this menu item belongs to.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Models.MenuItemGroup">
+            <summary>
+            A menu item group.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.MenuItemGroup.#ctor(System.String,System.String,System.Single)">
+            <summary>
+            A menu item group.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Models.RemoteBackend">
+            <summary>
+            Represent a remote backend.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.RemoteBackend.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Models.RemoteBackend"/> class.
+            </summary>
+            <param name="url">The URL of the backend.</param>
+        </member>
+        <member name="P:Elsa.Studio.Models.RemoteBackend.Url">
+            <summary>
+            The URL of the backend.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Models.Result`2">
+            <summary>
+            Represents a result that is either successful or failed.
+            </summary>
+            <typeparam name="TSuccess">The type of the success value.</typeparam>
+            <typeparam name="TFailure">The type of the failure value.</typeparam>
+        </member>
+        <member name="M:Elsa.Studio.Models.Result`2.#ctor(`0)">
+            <summary>
+            Creates a new successful result.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.Result`2.#ctor(`1)">
+            <summary>
+            Creates a new failed result.
+            </summary>
+            <param name="failure"></param>
+        </member>
+        <member name="P:Elsa.Studio.Models.Result`2.Success">
+            <summary>
+            The success value.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.Result`2.Failure">
+            <summary>
+            The failure value.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.Result`2.IsSuccess">
+            <summary>
+            Returns true if the result is successful.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Models.Result`2.IsFailed">
+            <summary>
+            Returns true if the result is failed.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Models.Result`2.OnSuccessAsync(System.Func{`0,System.Threading.Tasks.Task})">
+            <summary>
+            Invokes the specified handler if the result is successful.
+            </summary>
+            <returns>The success result.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Models.Result`2.OnSuccess(System.Action{`0})">
+            <summary>
+            Invokes the specified handler if the result is successful.
+            </summary>
+            <returns>The success result.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Models.Result`2.OnFailedAsync(System.Func{`1,System.Threading.Tasks.Task})">
+            <summary>
+            Invokes the specified handler if the result is failed.
+            </summary>
+            <returns>The failed result.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Models.Result`2.OnFailed(System.Action{`1})">
+            <summary>
+            Invokes the specified handler if the result is failed.
+            </summary>
+            <returns>The failed result.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Models.ServerInformation">
+            <summary>
+            Contains information about the server.
+            </summary>
+            <param name="PackageVersion">The installed package version of Elsa.</param>
+        </member>
+        <member name="M:Elsa.Studio.Models.ServerInformation.#ctor(System.String)">
+            <summary>
+            Contains information about the server.
+            </summary>
+            <param name="PackageVersion">The installed package version of Elsa.</param>
+        </member>
+        <member name="P:Elsa.Studio.Models.ServerInformation.PackageVersion">
+            <summary>The installed package version of Elsa.</summary>
+        </member>
+        <member name="T:Elsa.Studio.Options.BackendOptions">
+            <summary>
+            Provides options about the backend.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Options.BackendOptions.Url">
+            <summary>
+            The URL of the backend.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Services.AssemblyClientInformationProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.AssemblyClientInformationProvider.GetInfoAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.BlazorServiceAccessor">
+            This class is used to access the IServiceProvider from a different DI scope.
+            See: https://learn.microsoft.com/en-us/aspnet/core/blazor/fundamentals/dependency-injection?view=aspnetcore-7.0#access-server-side-blazor-services-from-a-different-di-scope
+        </member>
+        <member name="P:Elsa.Studio.Services.BlazorServiceAccessor.Services">
+            <summary>
+            Gets or sets the current IServiceProvider.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultFeatureService">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultFeatureService.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Contracts.IFeature},Elsa.Studio.Contracts.IRemoteFeatureProvider,System.IServiceProvider,Elsa.Studio.Contracts.IBlazorServiceAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.DefaultFeatureService"/> class.
+            </summary>
+        </member>
+        <member name="E:Elsa.Studio.Services.DefaultFeatureService.Initialized">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultFeatureService.GetFeatures">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultFeatureService.InitializeFeaturesAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultMediator">
+            <summary>
+            A default implementation of <see cref="T:Elsa.Studio.Contracts.IMediator"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMediator.#ctor(System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.DefaultMediator"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMediator.Subscribe``2(``1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMediator.Unsubscribe``2(``1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMediator.Unsubscribe(Elsa.Studio.Contracts.INotificationHandler)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMediator.NotifyAsync``1(``0,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultMenuService">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMenuService.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Contracts.IMenuProvider},System.Collections.Generic.IEnumerable{Elsa.Studio.Contracts.IMenuGroupProvider})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.DefaultMenuService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMenuService.GetMenuItemsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultMenuService.GetMenuItemGroupsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultRemoteBackendAccessor">
+            <summary>
+            A default implementation of <see cref="T:Elsa.Studio.Contracts.IRemoteBackendAccessor"/> that uses the <see cref="T:Elsa.Studio.Options.BackendOptions"/> to determine the URL of the remote backend.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultRemoteBackendAccessor.#ctor(Microsoft.Extensions.Options.IOptions{Elsa.Studio.Options.BackendOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.DefaultRemoteBackendAccessor"/> class.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Services.DefaultRemoteBackendAccessor.RemoteBackend">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultRemoteBackendApiClientProvider">
+            <summary>
+            Provides API clients to the remote backend.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultRemoteBackendApiClientProvider.#ctor(Elsa.Studio.Contracts.IRemoteBackendAccessor,System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.DefaultRemoteBackendApiClientProvider"/> class.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Services.DefaultRemoteBackendApiClientProvider.Url">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultRemoteBackendApiClientProvider.GetApiAsync``1(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultStartupTaskRunner">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultStartupTaskRunner.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Contracts.IStartupTask})">
+            <summary>
+            
+            </summary>
+            <param name="startupTasks"></param>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultStartupTaskRunner.RunStartupTasksAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultExpressionService">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultExpressionService.#ctor(Elsa.Studio.Contracts.IExpressionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.DefaultExpressionService"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultExpressionService.ListDescriptorsAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultExpressionService.GetByTypeAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultThemeService">
+            <inheritdoc />
+        </member>
+        <member name="E:Elsa.Studio.Services.DefaultThemeService.CurrentThemeChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Elsa.Studio.Services.DefaultThemeService.IsDarkModeChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Services.DefaultThemeService.CurrentTheme">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Services.DefaultThemeService.IsDarkMode">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.DefaultWidgetRegistry">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultWidgetRegistry.#ctor(System.Collections.Generic.IEnumerable{Elsa.Studio.Contracts.IWidget})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.DefaultWidgetRegistry"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultWidgetRegistry.Add(Elsa.Studio.Contracts.IWidget)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.DefaultWidgetRegistry.List(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.EmptyServerInformationProvider">
+            <summary>
+            A default implementation of <see cref="T:Elsa.Studio.Contracts.IServerInformationProvider"/> that returns dummy data.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.EmptyServerInformationProvider.GetInfoAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.RemoteExpressionProvider">
+            <summary>
+            Provides available expression descriptors from a remote API.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.RemoteExpressionProvider.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.RemoteExpressionProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.RemoteExpressionProvider.ListAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.RemoteRemoteFeatureProvider">
+            <summary>
+            A feature service that uses a remote backend to retrieve feature flags.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.RemoteRemoteFeatureProvider.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider,System.IServiceProvider,Elsa.Studio.Contracts.IBlazorServiceAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Services.RemoteRemoteFeatureProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Services.RemoteRemoteFeatureProvider.IsEnabledAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Services.RemoteRemoteFeatureProvider.ListAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Services.UnsupportedUIHintHandler">
+            <summary>
+            A fallback UI handler that is used when no other handler is found for a given UI hint.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.ActivityPortProviders</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.ActivityPortProviders.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Extensions.ServiceCollectionExtensions.AddDefaultActivityPortProviders(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds default activity port providers.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.ActivityPortProviders.Providers.DynamicOutcomesPortProvider">
+            <summary>
+            Provides ports for the FlowSendHttpRequest activity based on its supported status codes.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.DynamicOutcomesPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.DynamicOutcomesPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.ActivityPortProviders.Providers.FlowSendHttpRequestPortProvider">
+            <summary>
+            Provides ports for the FlowSendHttpRequest activity based on its supported status codes.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.FlowSendHttpRequestPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.FlowSendHttpRequestPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.ActivityPortProviders.Providers.FlowSwitchPortProvider">
+            <summary>
+            Provides ports for the FlowSwitch activity based on its cases.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.FlowSwitchPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.FlowSwitchPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.ActivityPortProviders.Providers.HttpEndpointPortProvider">
+            <summary>
+            Provides ports for the HttpEndpoint activity based on its configuration.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.HttpEndpointPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.HttpEndpointPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.ActivityPortProviders.Providers.SendHttpRequestPortProvider">
+            <summary>
+            Provides ports for the FlowSendHttpRequest activity based on its supported status codes.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SendHttpRequestPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SendHttpRequestPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SendHttpRequestPortProvider.ResolvePort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SendHttpRequestPortProvider.AssignPort(System.String,System.Text.Json.Nodes.JsonObject,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SendHttpRequestPortProvider.ClearPort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.ActivityPortProviders.Providers.SwitchPortProvider">
+            <summary>
+            Provides ports for the Switch activity based on its cases.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SwitchPortProvider.GetSupportsActivityType(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SwitchPortProvider.GetPorts(Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SwitchPortProvider.ResolvePort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SwitchPortProvider.AssignPort(System.String,System.Text.Json.Nodes.JsonObject,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.ActivityPortProviders.Providers.SwitchPortProvider.ClearPort(System.String,Elsa.Studio.Workflows.Domain.Contexts.PortProviderContext)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

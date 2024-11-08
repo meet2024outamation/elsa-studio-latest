@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Login</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Login.ComponentProviders.RedirectToLoginUnauthorizedComponentProvider">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Login.ComponentProviders.RedirectToLoginUnauthorizedComponentProvider.GetUnauthorizedComponent">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Login.Components.RedirectToLogin">
+            <summary>
+            Redirects to the login page.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Login.Components.RedirectToLogin.NavigationManager">
+            <summary>
+            Gets or sets the <see cref="P:Elsa.Studio.Login.Components.RedirectToLogin.NavigationManager"/>.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Components.RedirectToLogin.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Login.Contracts.ICredentialsValidator">
+            <summary>
+            A validator for credentials.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Contracts.ICredentialsValidator.ValidateCredentialsAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Validates the credentials.
+            </summary>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+            <param name="cancellationToken">An optional cancellation token.</param>
+            <returns>A <see cref="T:Elsa.Studio.Login.Models.ValidateCredentialsResult"/> instance.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Login.Contracts.IJwtAccessor">
+            <summary>
+            Reads the token from storage (e.g. cookie, local storage, etc.).
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Contracts.IJwtAccessor.ReadTokenAsync(System.String)">
+            <summary>
+            Reads the token from storage (e.g. cookie, local storage, etc.).
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Contracts.IJwtAccessor.WriteTokenAsync(System.String,System.String)">
+            <summary>
+            Writes the token to storage (e.g. cookie, local storage, etc.).
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Login.Contracts.IJwtParser">
+            <summary>
+            Parses a JWT token and returns the claims.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Contracts.IJwtParser.Parse(System.String)">
+            <summary>
+            Parses a JWT token and returns the claims.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Login.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Extensions.ServiceCollectionExtensions.AddLoginModuleCore(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the login module to the service collection.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Login.HttpMessageHandlers.AuthenticatingApiHttpMessageHandler">
+            <summary>
+            An <see cref="T:System.Net.Http.HttpMessageHandler"/> that configures the outgoing HTTP request to use the access token as bearer token.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.HttpMessageHandlers.AuthenticatingApiHttpMessageHandler.#ctor(Elsa.Studio.Contracts.IRemoteBackendAccessor,Elsa.Studio.Contracts.IBlazorServiceAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="!:AuthenticatingHttpMessageHandlerProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.HttpMessageHandlers.AuthenticatingApiHttpMessageHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Login.Pages.Login.Login">
+            <summary>
+            The login page.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Pages.Login.Login.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Login.Services.AccessTokenAuthenticationStateProvider">
+            <summary>
+            Provides the authentication state for the current user based on an access token.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Services.AccessTokenAuthenticationStateProvider.#ctor(Elsa.Studio.Login.Contracts.IJwtAccessor,Elsa.Studio.Login.Contracts.IJwtParser)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Login.Services.AccessTokenAuthenticationStateProvider.GetAuthenticationStateAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Login.Services.AccessTokenAuthenticationStateProvider.NotifyAuthenticationStateChanged">
+            <summary>
+            Notifies the authentication state has changed.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Login.Services.DefaultCredentialsValidator">
+            <summary>
+            A default implementation of <see cref="T:Elsa.Studio.Login.Contracts.ICredentialsValidator"/> that consumes the endpoints from Elsa.Identity.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Services.DefaultCredentialsValidator.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Login.Services.DefaultCredentialsValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Login.Services.DefaultCredentialsValidator.ValidateCredentialsAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1386 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.Workflows</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityPicker">
+            <summary>
+            A component that allows the user to pick an activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityPicker.DragDropManager">
+            <summary>
+            The drag and drop manager.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityPicker.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.ActivityPropertiesPanel">
+            <summary>
+            Renders the properties of an activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.ActivityPropertiesPanel.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.ActivityPropertiesPanel.Activity">
+            <summary>
+            Gets or sets the activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.ActivityPropertiesPanel.ActivityDescriptor">
+            <summary>
+            Gets or sets the activity descriptor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.ActivityPropertiesPanel.OnActivityUpdated">
+            <summary>
+            Gets or sets a callback that is invoked when the activity is updated.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.ActivityPropertiesPanel.VisiblePaneHeight">
+            <summary>
+            Gets or sets the visible pane height.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.ActivityPropertiesPanel.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.CommonTab">
+            The common tab for an activity.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.CommonTab.Activity">
+            The activity.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.CommonTab.ActivityDescriptor">
+            The activity descriptor.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.CommonTab.OnActivityUpdated">
+            An event raised when the activity is updated.
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InfoTab">
+            <summary>
+            The info tab for an activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InfoTab.ActivityDescriptor">
+            <summary>
+            The activity descriptor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InfoTab.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InputsTab">
+            <summary>
+            A tab for editing the inputs of an activity.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InputsTab.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InputsTab.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InputsTab.Activity">
+            <summary>
+            Gets or sets the activity to edit.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InputsTab.ActivityDescriptor">
+            <summary>
+            Gets or sets the activity descriptor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InputsTab.OnActivityUpdated">
+            <summary>
+            An event that is invoked when the activity is updated.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.InputsTab.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab">
+            <summary>
+            Displays the outputs of an activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.WorkflowDefinition">
+            <summary>
+            The workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.Activity">
+            <summary>
+            The activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.ActivityDescriptor">
+            <summary>
+            The activity descriptor.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.OnActivityUpdated">
+            <summary>
+            An event raised when the activity is updated.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.Workspace">
+            <summary>
+            The workspace.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.ShouldRender">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.Outputs.Components.OutputsTab.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab">
+            <summary>
+            Represents the persistence tab.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab.OnActivityUpdated">
+            An event raised when the activity is updated.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab.Activity">
+            <summary>
+            Gets or sets the activity to edit.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab.Workspace">
+            <summary>
+            The workspace.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab.ActivityDescriptor">
+            <summary>
+            Gets or sets the activity descriptor.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceTab.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceActivityConfiguration">
+            <summary>
+            Defines the Persistence Strategy Configuration for an activity
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceActivityConfiguration.Default">
+            <summary>
+            Default Configuration Strategy for the activity
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceActivityConfiguration.Inputs">
+            <summary>
+            Define Configuration Strategy for each Input properties
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.PersistenceActivityConfiguration.Outputs">
+            <summary>
+            Define Configuration Strategy for each Output properties
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.TaskTab">
+            <summary>
+            The Task tab for an activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.TaskTab.Activity">
+            The activity.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.TaskTab.ActivityDescriptor">
+            The activity descriptor.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.TaskTab.OnActivityUpdated">
+            An event raised when the activity is updated.
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.ActivityProperties.Tabs.TaskTab.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionVersionViewer.WorkflowDefinition">
+            Gets or sets the workflow definition to view.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionVersionViewer.WorkflowDefinitionExecuted">
+            <summary>An event that is invoked when a workflow definition has been executed.</summary>
+            <remarks>The ID of the workflow instance is provided as the value to the event callback.</remarks>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionVersionViewer.ActivitySelected">
+            Gets or sets the event triggered when an activity is selected.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionVersionViewer.SelectedActivityId">
+            Gets the ID of the selected activity.
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionVersionViewer.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionVersionViewer.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionVersionViewer.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace">
+            <summary>
+            A workspace for editing a workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition to edit.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.SelectedWorkflowDefinition">
+            <summary>
+            Gets or sets a specific version of the workflow definition to view.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.WorkflowDefinitionExecuted">
+            <summary>An event that is invoked when a workflow definition has been executed.</summary>
+            <remarks>The ID of the workflow instance is provided as the value to the event callback.</remarks>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.WorkflowDefinitionVersionSelected">
+            <summary>
+            Gets or sets the event that occurs when the workflow definition version is updated.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.ActivitySelected">
+            <summary>
+            Gets or sets the event that occurs when an activity is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Saving">
+            Gets or sets the event triggered when the workflow definition is being saved.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Saved">
+            Gets or sets the event triggered when the workflow definition has been saved.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.SavingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to save.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Publishing">
+            Gets or sets the event triggered when the workflow definition is being published.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Published">
+            Gets or sets the event triggered when the workflow definition has been published.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.PublishingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to publish.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Retracting">
+            Gets or sets the event triggered when the workflow definition is being retracted.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Retracted">
+            Gets or sets the event triggered when the workflow definition has been retracted.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.RetractingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to retract.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Exporting">
+            Gets or sets the event triggered when the workflow definition is being exported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Exported">
+            Gets or sets the event triggered when the workflow definition has been exported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Importing">
+            Gets or sets the event triggered when the workflow definition is being imported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.Imported">
+            Gets or sets the event triggered when the workflow definition has been imported.
+        </member>
+        <member name="E:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.WorkflowDefinitionUpdated">
+            <summary>
+            An event that is invoked when the workflow definition is updated.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.HasWorkflowEditPermission">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.SelectedActivityId">
+            Gets the selected activity ID.
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.DisplayWorkflowDefinitionVersion(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition)">
+            <summary>
+            Displays the specified workflow definition version.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.GetSelectedWorkflowDefinitionVersion">
+            <summary>
+            Gets the currently selected workflow definition version.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowDefinitionWorkspace.RefreshActiveWorkflowAsync">
+            <summary>
+            Refreshes the active workflow definition.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor">
+            <summary>
+            A component that allows the user to edit a workflow definition.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.DragDropManager">
+            <summary>
+            Gets or sets the drag and drop manager via property injection.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.WorkflowDefinitionUpdated">
+            <summary>
+            Gets or sets a callback invoked when the workflow definition is updated.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.WorkflowDefinitionExecuted">
+            <summary>An event that is invoked when a workflow definition has been executed.</summary>
+            <remarks>The ID of the workflow instance is provided as the value to the event callback.</remarks>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.ActivitySelected">
+            Gets or sets the event triggered when an activity is selected.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Saving">
+            Gets or sets the event triggered when the workflow definition is being saved.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Saved">
+            Gets or sets the event triggered when the workflow definition has been saved.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.SavingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to save.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Publishing">
+            Gets or sets the event triggered when the workflow definition is being published.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Published">
+            Gets or sets the event triggered when the workflow definition has been published.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.PublishingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to publish.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Retracting">
+            Gets or sets the event triggered when the workflow definition is being retracted.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Retracted">
+            Gets or sets the event triggered when the workflow definition has been retracted.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.RetractingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to retract.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Exporting">
+            Gets or sets the event triggered when the workflow definition is being exported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Exported">
+            Gets or sets the event triggered when the workflow definition has been exported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Importing">
+            Gets or sets the event triggered when the workflow definition is being imported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.Imported">
+            Gets or sets the event triggered when the workflow definition has been imported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.SelectedActivityId">
+            Gets the selected activity ID.
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.NotifyWorkflowChangedAsync">
+            <summary>
+            Gets or sets a flag indicating whether the workflow definition is dirty.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowEditor.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.InputOutput.Components.Outputs.EditOutputDialog">
+            <summary>
+            A dialog for editing an output.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.InputOutput.Components.Outputs.EditOutputDialog.WorkflowDefinition">
+            <summary>
+            The workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.InputOutput.Components.Outputs.EditOutputDialog.Output">
+            <summary>
+            The output to edit.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.InputOutput.Components.Outputs.EditOutputDialog.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.PropertiesTab">
+            <summary>
+            A component that renders the workflow definition properties tab.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.PropertiesTab.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.PropertiesTab.OnWorkflowDefinitionUpdated">
+            <summary>
+            Gets or sets the callback that is invoked when the workflow definition is updated.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Metadata.Metadata">
+            <summary>
+            A component that renders the workflow definition metadata.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Metadata.Metadata.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Metadata.Metadata.OnWorkflowDefinitionUpdated">
+            <summary>
+            Gets or sets the callback that is invoked when the workflow definition is updated.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Metadata.Metadata.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Settings.Settings">
+            <summary>
+            Displays the settings of a workflow.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Settings.Settings.WorkflowDefinition">
+            <summary>
+            The workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Settings.Settings.OnWorkflowDefinitionUpdated">
+            <summary>
+            An event raised when the workflow is updated.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Settings.Settings.Workspace">
+            <summary>
+            The workspace.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Properties.Sections.Settings.Settings.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Variables.Components.EditVariableDialog">
+            <summary>
+            A dialog that allows the user to edit a variable.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Variables.Components.EditVariableDialog.WorkflowDefinition">
+            <summary>
+            The workflow definition that the variable belongs to.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Variables.Components.EditVariableDialog.Variable">
+            <summary>
+            The variable to edit. If null, a new variable will be created.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Variables.Components.EditVariableDialog.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Variables.Validators.VariableModelValidator">
+            <summary>
+            Validates a variable model.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.Variables.Validators.VariableModelValidator.#ctor(Elsa.Api.Client.Resources.WorkflowDefinitions.Models.WorkflowDefinition)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.VersionHistory.VersionHistoryTab">
+            Represents a tab in the version history section of a workflow definition workspace.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.VersionHistory.VersionHistoryTab.DefinitionId">
+            Gets or sets the definition ID.
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.Components.WorkflowProperties.Tabs.VersionHistory.VersionHistoryTab.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.DefinitionId">
+            The ID of the workflow definition to load.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.WorkflowDefinitionVersionSelected">
+            Gets or sets the event that occurs when the workflow definition version is updated.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.ActivitySelected">
+            Gets or sets the event triggered when an activity is selected.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Saving">
+            Gets or sets the event triggered when the workflow definition is being saved.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Saved">
+            Gets or sets the event triggered when the workflow definition has been saved.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.SavingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to save.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Publishing">
+            Gets or sets the event triggered when the workflow definition is being published.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Published">
+            Gets or sets the event triggered when the workflow definition has been published.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.PublishingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to publish.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Retracting">
+            Gets or sets the event triggered when the workflow definition is being retracted.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Retracted">
+            Gets or sets the event triggered when the workflow definition has been retracted.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.RetractingFailed">
+            Gets or sets the event triggered when the workflow definition has failed to retract.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Exporting">
+            Gets or sets the event triggered when the workflow definition is being exported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Exported">
+            Gets or sets the event triggered when the workflow definition has been exported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Importing">
+            Gets or sets the event triggered when the workflow definition is being imported.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.Imported">
+            Gets or sets the event triggered when the workflow definition has been imported.
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.GetSelectedWorkflowDefinitionVersion">
+            Gets the currently selected workflow definition version.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.WorkflowDefinitionExecuted">
+            <summary>An event that is invoked when a workflow definition has been executed.</summary>
+            <remarks>The ID of the workflow instance is provided as the value to the event callback.</remarks>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.SelectedActivityId">
+            Gets the currently selected activity ID.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionEditor.WorkflowDefinitionEditor.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionList.CreateWorkflowDialog">
+            <summary>
+            A dialog that allows the user to create a new workflow.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionList.CreateWorkflowDialog.WorkflowName">
+            <summary>
+            The name of the workflow to create.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowDefinitionList.CreateWorkflowDialog.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowDefinitionList.WorkflowDefinitionList">
+            <summary>
+            Displays a list of workflow definitions.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowDefinitionList.WorkflowDefinitionList.EditWorkflowDefinition">
+            <summary>
+            An event that is invoked when a workflow definition is edited.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceList.Models.TimestampFilterModel">
+            <summary>
+            Represents a timestamp filter used for filtering data based on a specified timestamp column and operator.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceList.Models.TimestampFilterModel.Column">
+            <summary>
+            Gets or sets the column to filter by.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceList.Models.TimestampFilterModel.Operator">
+            <summary>
+            Gets or sets the operator to use for filtering.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceList.Models.TimestampFilterModel.Date">
+            <summary>
+            Gets or sets the date to filter by.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceList.Models.TimestampFilterModel.Time">
+            <summary>
+            Gets or sets the time to filter by.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceList.WorkflowInstanceList">
+            Represents the workflow instances list page.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceList.WorkflowInstanceList.ViewWorkflowInstance">
+            <summary>
+            An event that is invoked when a workflow definition is edited.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceList.WorkflowInstanceList.SelectedStatuses">
+            The selected statuses to filter by.
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceList.WorkflowInstanceList.SelectedSubStatuses">
+            The selected sub-statuses to filter by.
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceList.WorkflowInstanceList.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab">
+            <summary>
+            Displays the details of an activity.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.ActivityExecutionRecordTableRow">
+            <summary>
+            Represents a row in the table of activity executions.
+            </summary>
+            <param name="Number">The number of executions.</param>
+            <param name="ActivityExecution">The activity execution.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.ActivityExecutionRecordTableRow.#ctor(System.Int32,Elsa.Api.Client.Resources.ActivityExecutions.Models.ActivityExecutionRecord)">
+            <summary>
+            Represents a row in the table of activity executions.
+            </summary>
+            <param name="Number">The number of executions.</param>
+            <param name="ActivityExecution">The activity execution.</param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.ActivityExecutionRecordTableRow.Number">
+            <summary>The number of executions.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.ActivityExecutionRecordTableRow.ActivityExecution">
+            <summary>The activity execution.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.VisiblePaneHeight">
+            <summary>
+            The height of the visible pane.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.Activity">
+            <summary>
+            The activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.ActivityExecutions">
+            <summary>
+            The activity execution records.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.Refresh">
+            <summary>
+            Refreshes the component.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityDetailsTab.OnInitialized">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab">
+            <summary>
+            Displays the details of an activity.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.ActivityExecutionRecordTableRow">
+            <summary>
+            Represents a row in the table of activity executions.
+            </summary>
+            <param name="Number">The number of executions.</param>
+            <param name="ActivityExecution">The activity execution.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.ActivityExecutionRecordTableRow.#ctor(System.Int32,Elsa.Api.Client.Resources.ActivityExecutions.Models.ActivityExecutionRecord)">
+            <summary>
+            Represents a row in the table of activity executions.
+            </summary>
+            <param name="Number">The number of executions.</param>
+            <param name="ActivityExecution">The activity execution.</param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.ActivityExecutionRecordTableRow.Number">
+            <summary>The number of executions.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.ActivityExecutionRecordTableRow.ActivityExecution">
+            <summary>The activity execution.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.VisiblePaneHeight">
+            <summary>
+            The height of the visible pane.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.Activity">
+            <summary>
+            The activity.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.ActivityExecutions">
+            <summary>
+            The activity execution records.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ActivityExecutionsTab.Refresh">
+            <summary>
+            Refreshes the component.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ElapsedTime">
+            <summary>
+            Represents the elapsed time between a start and end point.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ElapsedTime.StartTime">
+            <summary>
+            Gets or sets the start time for the property.
+            </summary>
+            <value>The start time.</value>
+            <remarks>
+            The start time represents the point in time from which the property should be considered.
+            The default value is set to the current UTC time.
+            </remarks>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.ElapsedTime.EndTime">
+            <summary>
+            Gets or sets the end time.
+            The end time represents the date and time when the event or activity ends.
+            </summary>
+            <remarks>
+            The default value is set to the current Coordinated Universal Time (UTC) using <see cref="P:System.DateTimeOffset.UtcNow"/>.
+            </remarks>
+            <value>
+            The end time as a <see cref="T:System.DateTimeOffset"/> value.
+            </value>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.Journal">
+            <summary>
+            Displays the journal for a workflow instance.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.Journal.JournalEntrySelected">
+            <summary>
+            Gets or sets a callback that is invoked when a journal entry is selected.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.Journal.SetWorkflowInstanceAsync(Elsa.Api.Client.Resources.WorkflowInstances.Models.WorkflowInstance,Elsa.Api.Client.Resources.WorkflowInstances.Requests.JournalFilter)">
+            <summary>
+            Sets the workflow instance to display the journal for.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.Journal.ClearSelection">
+            <summary>
+            Clears the selection.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.Journal.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.Journal.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.Journal.OnAfterRender(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.JournalEntryDetailsTab">
+            <summary>
+            Displays the details of a journal entry.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.JournalEntryDetailsTab.JournalEntry">
+            <summary>
+            The journal entry.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.JournalEntryDetailsTab.VisiblePaneHeight">
+            <summary>
+            The height of the visible pane.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner">
+            <summary>
+            Displays the workflow instance.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.WorkflowInstance">
+            <summary>
+            The workflow instance.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.WorkflowDefinition">
+            <summary>
+            The workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.SelectedWorkflowExecutionLogRecord">
+            <summary>
+            The selected workflow execution log record.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.PathChanged">
+            <summary>
+            The path changed callback.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.ActivitySelected">
+            <summary>
+            The activity selected callback.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.EditWorkflowDefinition">
+            <summary>
+            An event that is invoked when a workflow definition is edited.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.SelectedSubWorkflow">
+            <summary>
+            Gets or sets the current selected sub-workflow.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.UpdateSubWorkflow(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Updates the selected sub-workflow.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDesigner.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails">
+            <summary>
+            Displays details about a workflow instance.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails.WorkflowInstance">
+            <summary>
+            Gets or sets the workflow instance to display.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails.WorkflowDefinition">
+            <summary>
+            Gets or sets the workflow definition associated with the workflow instance.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails.SelectedSubWorkflow">
+            <summary>
+            Gets or sets the current selected sub-workflow.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails.SelectedSubWorkflowExecutions">
+            <summary>
+            Gets or sets the current selected sub-workflow executions.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails.UpdateSubWorkflowAsync(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Updates the selected sub-workflow.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceDetails.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.Components.WorkflowInstanceWorkspace.EditWorkflowDefinition">
+            <summary>
+            An event that is invoked when a workflow definition is edited.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.WorkflowInstanceViewer">
+            <summary>
+            The index page for viewing a workflow instance.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.WorkflowInstanceViewer.InstanceId">
+            <summary>
+            The ID of the workflow instance to view.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.WorkflowInstanceViewer.EditWorkflowDefinition">
+            <summary>
+            An event that is invoked when a workflow definition is edited.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Components.WorkflowInstanceViewer.WorkflowInstanceViewer.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="F:Elsa.Studio.Workflows.Pages.WorkflowInstances.View.Models.TimeMetricMode.Relative">
+            <summary>
+            Show the delta between the current and previous log entry.
+            </summary>
+        </member>
+        <member name="F:Elsa.Studio.Workflows.Pages.WorkflowInstances.View.Models.TimeMetricMode.Accumulated">
+            <summary>
+            Show the accumulated time since the workflow instance started until the current log entry.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Pages.WorkflowInstances.View.Index.Id">
+            <summary>
+            The ID of the workflow instance to view.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Pages.WorkflowDefinitions.Edit.Index.DefinitionId">
+            <summary>
+            The ID of the workflow definition to edit.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Constants.ZoneNames">
+            <summary>
+            Provides zone names.
+            </summary>
+        </member>
+        <member name="F:Elsa.Studio.Workflows.Constants.ZoneNames.WorkflowDefinitionProperties">
+            <summary>
+            The zone for the workflow definition properties.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Contracts.IWorkflowInstanceObserverFactory">
+            <summary>
+            A factory for creating <see cref="T:Elsa.Studio.Workflows.Contracts.IWorkflowInstanceObserver"/> instances.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Contracts.IWorkflowInstanceObserverFactory.CreateAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new <see cref="T:Elsa.Studio.Workflows.Contracts.IWorkflowInstanceObserver"/> instance.
+            </summary>
+            <param name="workflowInstanceId">The ID of the workflow instance to observe.</param>
+            <param name="cancellationToken">An optional cancellation token.</param>
+            <returns>A <see cref="T:Elsa.Studio.Workflows.Contracts.IWorkflowInstanceObserver"/> instance.</returns>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.DiagramDesigners.Fallback.FallbackDiagramDesigner">
+            <summary>
+            A fallback diagram designer that displays a simplified view of the workflow.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Fallback.FallbackDiagramDesigner.LoadRootActivityAsync(System.Text.Json.Nodes.JsonObject,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Fallback.FallbackDiagramDesigner.UpdateActivityAsync(System.String,System.Text.Json.Nodes.JsonObject)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Fallback.FallbackDiagramDesigner.UpdateActivityStatsAsync(System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Fallback.FallbackDiagramDesigner.SelectActivityAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Fallback.FallbackDiagramDesigner.ReadRootActivityAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Fallback.FallbackDiagramDesigner.DisplayDesigner(Elsa.Studio.Workflows.UI.Contexts.DisplayContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper">
+            <summary>
+            A wrapper around the <see cref="T:Elsa.Studio.Workflows.Designer.Components.FlowchartDesigner"/> component that provides interactivity such as drag and drop and displaying the designer in edit or read-only mode.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.Flowchart">
+            <summary>
+            The flowchart to display.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.ActivityStats">
+            <summary>
+            A map of activity stats.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.IsReadOnly">
+            <summary>
+            Whether the designer is read-only.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.ActivitySelected">
+            <summary>
+            An event raised when an activity is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.ActivityEmbeddedPortSelected">
+            <summary>
+            An event raised when an embedded port is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.ActivityDoubleClick">
+            <summary>
+            An event raised when an activity is double-clicked.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.GraphUpdated">
+            <summary>
+            An event raised when the graph is updated.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.LoadFlowchartAsync(System.Text.Json.Nodes.JsonObject,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <summary>
+            Loads the specified flowchart activity into the designer.
+            </summary>
+            <param name="activity">The flowchart activity to load.</param>
+            <param name="activityStats">A map of activity stats.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.UpdateActivityAsync(System.String,System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Updates the specified activity in the flowchart.
+            </summary>
+            <param name="id">The ID of the activity to update.</param>
+            <param name="activity">The activity to update.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if the designer is read-only.</exception>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.UpdateActivityStatsAsync(System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats)">
+            <summary>
+            Updates the stats of the specified activity.
+            </summary>
+            <param name="id">The ID of the activity to update.</param>
+            <param name="stats">The stats to update.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.SelectActivityAsync(System.String)">
+            <summary>
+            Selects the specified activity in the flowchart.
+            </summary>
+            <param name="id">The ID of the activity to select.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.ReadRootActivityAsync">
+            <summary>
+            Reads the root activity from the flowchart.
+            </summary>
+            <returns>The root activity.</returns>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.ZoomToFitAsync">
+            <summary>
+            Zooms the designer to fit the content.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.CenterContentAsync">
+            <summary>
+            Centers the content of the designer.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDesignerWrapper.AutoLayoutAsync">
+            <summary>
+            Auto layouts the flowchart.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner">
+            <summary>
+            A diagram designer that displays a flowchart.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner.LoadRootActivityAsync(System.Text.Json.Nodes.JsonObject,System.Collections.Generic.IDictionary{System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats})">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner.UpdateActivityAsync(System.String,System.Text.Json.Nodes.JsonObject)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner.UpdateActivityStatsAsync(System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner.SelectActivityAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner.ReadRootActivityAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner.DisplayDesigner(Elsa.Studio.Workflows.UI.Contexts.DisplayContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesigner.GetToolboxItems(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesignerProvider">
+            <summary>
+            A diagram designer provider for the Flowchart designer.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesignerProvider.Priority">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesignerProvider.GetSupportsActivity(System.Text.Json.Nodes.JsonObject)">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.DiagramDesigners.Flowcharts.FlowchartDiagramDesignerProvider.GetEditor">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Extensions.ServiceCollectionExtensions.AddWorkflowsModule(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the workflows module.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Feature">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Handlers.RefreshActivityRegistry">
+            <summary>
+            A handler that refreshes the activity registry when a workflow definition is deleted, published or retracted.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Handlers.RefreshActivityRegistry.#ctor(Elsa.Studio.Workflows.Domain.Contracts.IActivityRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Elsa.Studio.Workflows.Handlers.RefreshActivityRegistry"/> class.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Models.ActivityPathSegment">
+            <summary>
+            Represents a path segment in a workflow.
+            </summary>
+            <param name="ActivityId">The ID of the activity.</param>
+            <param name="ActivityType">The type of the activity.</param>
+            <param name="PortName">The name of the port.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Models.ActivityPathSegment.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Represents a path segment in a workflow.
+            </summary>
+            <param name="ActivityId">The ID of the activity.</param>
+            <param name="ActivityType">The type of the activity.</param>
+            <param name="PortName">The name of the port.</param>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Models.ActivityPathSegment.ActivityId">
+            <summary>The ID of the activity.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Models.ActivityPathSegment.ActivityType">
+            <summary>The type of the activity.</summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Models.ActivityPathSegment.PortName">
+            <summary>The name of the port.</summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Models.DragDropManager">
+            <summary>
+            A manager for drag and drop operations.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Models.DragDropManager.Payload">
+            <summary>
+            A payload value associated with the element being dragged.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Models.WorkflowMetadataModel">
+            <summary>
+            Represents the metadata of a workflow.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Models.WorkflowMetadataModel.DefinitionId">
+            <summary>
+            Gets or sets the ID of the workflow definition.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Models.WorkflowMetadataModel.Name">
+            <summary>
+            Gets or sets the name of the workflow.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Models.WorkflowMetadataModel.Description">
+            <summary>
+            Gets or sets the description of the workflow.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Services.DisconnectedWorkflowInstanceObserver">
+            <summary>
+            An implementation of <see cref="T:Elsa.Studio.Workflows.Contracts.IWorkflowInstanceObserver"/> that does nothing.
+            </summary>
+        </member>
+        <member name="E:Elsa.Studio.Workflows.Services.DisconnectedWorkflowInstanceObserver.WorkflowJournalUpdated">
+            <inheritdoc />
+        </member>
+        <member name="E:Elsa.Studio.Workflows.Services.DisconnectedWorkflowInstanceObserver.ActivityExecutionLogUpdated">
+            <inheritdoc />
+        </member>
+        <member name="E:Elsa.Studio.Workflows.Services.DisconnectedWorkflowInstanceObserver.WorkflowInstanceUpdated">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Services.WorkflowInstanceObserver">
+            <summary>
+            A wrapper around a SignalR connection that receives notifications about workflow instance updates.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Services.WorkflowInstanceObserverFactory">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Services.WorkflowInstanceObserverFactory.#ctor(Elsa.Studio.Contracts.IRemoteBackendApiClientProvider,Elsa.Studio.Contracts.IRemoteFeatureProvider,System.Net.Http.IHttpMessageHandlerFactory,Microsoft.Extensions.Logging.ILogger{Elsa.Studio.Workflows.Services.WorkflowInstanceObserverFactory})">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Services.WorkflowInstanceObserverFactory.CreateAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper">
+            <summary>
+            A wrapper around the diagram designer that provides a breadcrumb and a toolbar.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.Activity">
+            <summary>
+            The diagram activity to display.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.IsReadOnly">
+            <summary>
+            Whether the designer is read-only.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.WorkflowInstanceId">
+            <summary>
+            The workflow instance ID, if any.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.CustomToolbarItems">
+            <summary>
+            A custom toolbar to display.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.IsProgressing">
+            <summary>
+            Whether the designer is progressing.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.ActivitySelected">
+            <summary>
+            An event raised when an activity is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.GraphUpdated">
+            <summary>
+            An event raised when an embedded port is selected.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.PathChanged">
+            <summary>
+            An event raised when the path changes.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.SelectActivityAsync(Elsa.Api.Client.Shared.Models.ActivityNode)">
+            <summary>
+            Selects the activity with the specified ID.
+            </summary>
+            <param name="activityNode">The activity node to select.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.UpdateActivityStatsAsync(System.String,Elsa.Studio.Workflows.UI.Models.ActivityStats)">
+            <summary>
+            Updates the stats of the specified activity.
+            </summary>
+            <param name="activityId">The ID of the activity to update.</param>
+            <param name="stats">The stats to update.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.ReadActivityAsync">
+            <summary>
+            Reads the activity from the designer.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.GetPath">
+            <summary>
+            Gets the path to the current activity.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.LoadActivityAsync(System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Loads the specified activity into the designer.
+            </summary>
+            <param name="activity">The activity to load.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.UpdateActivityAsync(System.String,System.Text.Json.Nodes.JsonObject)">
+            <summary>
+            Updates the specified activity in the designer.
+            </summary>
+            <param name="activityId">The ID of the activity to update.</param>
+            <param name="activity">The activity to update.</param>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Shared.Components.DiagramDesignerWrapper.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Validators.WorkflowPropertiesModelValidator">
+            <summary>
+            A validator for <see cref="T:Elsa.Studio.Workflows.Models.WorkflowMetadataModel"/> instances.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.Workflows.Validators.WorkflowPropertiesModelValidator.#ctor(Elsa.Studio.Workflows.Domain.Contracts.IWorkflowDefinitionService,Elsa.Studio.Contracts.IBlazorServiceAccessor,System.IServiceProvider)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionInfoWidget">
+            <summary>
+            A widget that renders the workflow definition info.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionInfoWidget.Order">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionInfoWidget.Render">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionMetadataWidget">
+            <summary>
+            A widget that renders the workflow definition metadata.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionMetadataWidget.Order">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionMetadataWidget.Render">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionPropertiesWidgetBase">
+            <summary>
+            A widget that renders the workflow definition info.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionPropertiesWidgetBase.Zone">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionPropertiesWidgetBase.Order">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionPropertiesWidgetBase.Render">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionSettingsWidget">
+            <summary>
+            A widget that renders the workflow definition settings.
+            </summary>
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionSettingsWidget.Order">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.Workflows.Widgets.WorkflowDefinitionSettingsWidget.Render">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

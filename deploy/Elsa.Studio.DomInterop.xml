@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Elsa.Studio.DomInterop</name>
+    </assembly>
+    <members>
+        <member name="T:Elsa.Studio.DomInterop.Contracts.IClipboard">
+            <summary>
+            Provides access to the browser's DOM.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.DomInterop.Contracts.IDomAccessor">
+            <summary>
+            Provides access to the browser's DOM.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.DomInterop.Contracts.IFiles">
+            <summary>
+            Provides JS interop methods for the files module.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.DomInterop.Contracts.IFiles.DownloadFileFromStreamAsync(System.String,System.IO.Stream)">
+            <summary>
+            Downloads a file from a stream.
+            </summary>
+            <param name="fileName">The name of the file.</param>
+            <param name="stream">The stream to download from.</param>
+        </member>
+        <member name="T:Elsa.Studio.DomInterop.Interop.ClipboardJsInterop">
+            <summary>
+            Provides access to the dom JavaScript module.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.DomInterop.Interop.DomJsInterop">
+            <summary>
+            Provides access to the dom JavaScript module.
+            </summary>
+        </member>
+        <member name="T:Elsa.Studio.DomInterop.Interop.FilesJsInterop">
+            <summary>
+            Provides JS interop methods for the files module.
+            </summary>
+        </member>
+        <member name="M:Elsa.Studio.DomInterop.Interop.FilesJsInterop.#ctor(Microsoft.JSInterop.IJSRuntime)">
+            <inheritdoc />
+        </member>
+        <member name="P:Elsa.Studio.DomInterop.Interop.FilesJsInterop.ModuleName">
+            <inheritdoc />
+        </member>
+        <member name="M:Elsa.Studio.DomInterop.Interop.FilesJsInterop.DownloadFileFromStreamAsync(System.String,System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="T:Elsa.Studio.DomInterop.Interop.JsInteropBase">
+            <summary>
+            Provides access to the designer JavaScript module.
+            </summary>
+        </member>
+    </members>
+</doc>
