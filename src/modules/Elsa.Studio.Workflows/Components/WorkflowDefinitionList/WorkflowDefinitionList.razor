@@ -31,7 +31,7 @@
                 <MudMenuItem Disabled="IsReadOnlyMode" OnClick="@OnBulkDeleteClicked">Delete</MudMenuItem>
                 <MudMenuItem Disabled="IsReadOnlyMode" OnClick="@OnBulkPublishClicked">Publish</MudMenuItem>
                 <MudMenuItem Disabled="IsReadOnlyMode" OnClick="@OnBulkRetractClicked">Unpublish</MudMenuItem>
-                <MudMenuItem OnClick="@OnBulkExportClicked">Export</MudMenuItem>
+                @* <MudMenuItem OnClick="@OnBulkExportClicked">Export</MudMenuItem> *@
             </MudMenu>
             <MudSpacer/>
 
@@ -109,8 +109,8 @@
                     <MudDivider DividerType="DividerType.FullWidth"></MudDivider>
                     <MudMenuItem Icon="@Icons.Material.Outlined.CloudUpload" OnClick="@(() => OnPublishClicked(context.DefinitionId))" Disabled="IsReadOnlyMode || context.IsReadOnlyMode">Publish</MudMenuItem>
                     <MudMenuItem Icon="@Icons.Material.Outlined.CloudDownload" OnClick="@(() => OnRetractClicked(context.DefinitionId))" Disabled="IsReadOnlyMode || context.IsReadOnlyMode">Unpublish</MudMenuItem>
-                    <MudDivider DividerType="DividerType.FullWidth"></MudDivider>
-                    <MudMenuItem Icon="@Icons.Material.Filled.FileDownload" OnClick="@(() => OnDownloadClicked(context))">Export</MudMenuItem>
+                    @* <MudDivider DividerType="DividerType.FullWidth"></MudDivider> *@
+                    @* <MudMenuItem Icon="@Icons.Material.Filled.FileDownload" OnClick="@(() => OnDownloadClicked(context))">Export</MudMenuItem> *@
 
                 </MudMenu>
             </MudTd>
